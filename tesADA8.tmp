@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://swuaqqfcb827"]
+
+[ext_resource type="PackedScene" uid="uid://ckvtqbfd38e7h" path="res://Objects/Characters/player.tscn" id="1_hyxga"]
+[ext_resource type="Texture2D" uid="uid://c2htj7uets2ix" path="res://Visuals/Tilesets/terrain-tileset.png" id="2_lyu64"]
+[ext_resource type="Script" path="res://worldgen.gd" id="3_56fwa"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cfx78"]
+texture = ExtResource("2_lyu64")
+texture_region_size = Vector2i(4, 4)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2, -2, 2, -2, 2, 2, -2, 2, -2, -2)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2, -2, 2, -2, 2, 2, -2, 2, -2, -2)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2, -2, 2, -2, 2, 2, -2, 2, -2, -2)
+3:0/0 = 0
+3:0/0/modulate = Color(1, 1, 1, 0.482353)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2, -2, 2, -2, 2, 2, -2, 2, -2, -2)
+
+[sub_resource type="TileSet" id="TileSet_0joul"]
+tile_size = Vector2i(4, 4)
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_cfx78")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_io1hr"]
+noise_type = 4
+frequency = 0.004
+domain_warp_type = 1
+domain_warp_amplitude = 35.08
+domain_warp_frequency = -0.015
+domain_warp_fractal_octaves = 2
+domain_warp_fractal_lacunarity = 4.4
+domain_warp_fractal_gain = 7.915
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_wdaqr"]
+noise_type = 5
+seed = 2
+frequency = 0.0001
+fractal_octaves = 4
+fractal_lacunarity = 3.385
+fractal_gain = 58.24
+
+[node name="TestWorld" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_hyxga")]
+unique_name_in_owner = true
+position = Vector2(0, -1465)
+collision_mask = 2
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_set = SubResource("TileSet_0joul")
+script = ExtResource("3_56fwa")
+noise = SubResource("FastNoiseLite_io1hr")
+biomenoise = SubResource("FastNoiseLite_wdaqr")

@@ -1,0 +1,262 @@
+[gd_scene load_steps=19 format=3 uid="uid://ckvtqbfd38e7h"]
+
+[ext_resource type="Texture2D" uid="uid://xau6mtt07cnr" path="res://Visuals/Characters/Player/leg.png" id="1_nk3ii"]
+[ext_resource type="Script" path="res://Scripts/Characters/player.gd" id="1_uh5f4"]
+[ext_resource type="Texture2D" uid="uid://b5w7gfbhptng0" path="res://Visuals/Characters/Player/body.png" id="2_7d1l4"]
+[ext_resource type="Texture2D" uid="uid://7garrfnqo07l" path="res://Visuals/Characters/Player/arm.png" id="3_uvwcy"]
+[ext_resource type="Texture2D" uid="uid://biows5nwdhx1g" path="res://Visuals/Characters/Player/head.png" id="4_qmel5"]
+[ext_resource type="Texture2D" uid="uid://mcxex4tk5i5v" path="res://Visuals/Characters/Player/hair1.png" id="6_18txj"]
+[ext_resource type="Texture2D" uid="uid://oo7pncd0yyi3" path="res://Visuals/Characters/Player/eye.png" id="6_ur720"]
+[ext_resource type="Texture2D" uid="uid://8ixp20hvcris" path="res://Visuals/Characters/Player/eyelid.png" id="7_5jfh4"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_7rexj"]
+points = PackedVector2Array(-4, -11, -4, 7, 0, 11, 4, 7, 4, -11)
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ayhq8"]
+animation = &"running"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jyetk"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_7gwy1"]
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_gmkk5"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_di55d"]
+graph_offset = Vector2(-502.513, -95.7503)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_jyetk")
+nodes/Animation/position = Vector2(120, 140)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_ayhq8")
+"nodes/Animation 2/position" = Vector2(-180, 320)
+nodes/Movement/node = SubResource("AnimationNodeAdd2_7gwy1")
+nodes/Movement/position = Vector2(380, 180)
+nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_gmkk5")
+nodes/TimeScale/position = Vector2(120, 300)
+nodes/output/position = Vector2(780, 140)
+node_connections = [&"Movement", 0, &"Animation", &"Movement", 1, &"TimeScale", &"TimeScale", 0, &"Animation 2", &"output", 0, &"Movement"]
+
+[sub_resource type="Animation" id="Animation_3mwnn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("visuals/LeftLeg:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("visuals/Head/Eyelid:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("visuals/RightArm:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("visuals/RightLeg:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("visuals/LeftArm:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_cks6m"]
+resource_name = "idle"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("visuals/Head/Eyelid:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 9, 9.23333, 9.5, 9.73333, 10),
+"transitions": PackedFloat32Array(1, 1e-05, 1e-05, 1.1487e-05, 1e-05, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 2), Vector2(0, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_peprl"]
+resource_name = "running"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("visuals/LeftLeg:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.785398, 0.0, -0.785398, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("visuals/RightLeg:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.785398, 0.0, 0.785398, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("visuals/LeftArm:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.349066, 0.0, 0.349066, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("visuals/RightArm:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.349066, 0.0, -0.349066, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3c7gf"]
+_data = {
+"RESET": SubResource("Animation_3mwnn"),
+"idle": SubResource("Animation_cks6m"),
+"running": SubResource("Animation_peprl")
+}
+
+[node name="Player" type="CharacterBody2D"]
+floor_max_angle = 1.48353
+script = ExtResource("1_uh5f4")
+
+[node name="visuals" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -10)
+skew = -0.0268377
+
+[node name="Body" type="Sprite2D" parent="visuals"]
+z_index = 2
+position = Vector2(-1, 5)
+texture = ExtResource("2_7d1l4")
+offset = Vector2(0, -7)
+
+[node name="LeftArm" type="Sprite2D" parent="visuals"]
+position = Vector2(5, -3)
+texture = ExtResource("3_uvwcy")
+offset = Vector2(0, 1)
+
+[node name="RightLeg" type="Sprite2D" parent="visuals"]
+z_index = 3
+position = Vector2(-1, 4)
+texture = ExtResource("1_nk3ii")
+offset = Vector2(0, -6)
+
+[node name="RightArm" type="Sprite2D" parent="visuals"]
+z_index = 4
+position = Vector2(-2, -2)
+texture = ExtResource("3_uvwcy")
+offset = Vector2(1, 0)
+
+[node name="LeftLeg" type="Sprite2D" parent="visuals"]
+show_behind_parent = true
+z_index = 1
+position = Vector2(1, 4)
+texture = ExtResource("1_nk3ii")
+offset = Vector2(0, -6)
+
+[node name="Head" type="Sprite2D" parent="visuals"]
+unique_name_in_owner = true
+z_index = 3
+position = Vector2(-1, -3)
+texture = ExtResource("4_qmel5")
+offset = Vector2(1, 2)
+
+[node name="Eye" type="Sprite2D" parent="visuals/Head"]
+unique_name_in_owner = true
+modulate = Color(5.67943e-06, 0.597935, 0.779366, 1)
+position = Vector2(3, -1)
+texture = ExtResource("6_ur720")
+
+[node name="Eyelid" type="Sprite2D" parent="visuals/Head"]
+position = Vector2(3, -3)
+texture = ExtResource("7_5jfh4")
+
+[node name="Hair1" type="Sprite2D" parent="visuals/Head"]
+modulate = Color(0.42592, 0.262387, 0, 1)
+position = Vector2(1, 2)
+texture = ExtResource("6_18txj")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -11)
+shape = SubResource("ConvexPolygonShape2D_7rexj")
+metadata/_edit_lock_ = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(0, -15)
+zoom = Vector2(4, 4)
+position_smoothing_speed = 3.0
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+unique_name_in_owner = true
+root_node = NodePath("%AnimationTree/..")
+tree_root = SubResource("AnimationNodeBlendTree_di55d")
+anim_player = NodePath("../AnimationPlayer")
+parameters/Movement/add_amount = 0.0
+parameters/TimeScale/scale = 4.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_3c7gf")
+}
+speed_scale = 3.0
