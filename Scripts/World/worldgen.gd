@@ -12,19 +12,27 @@ var bottom_of_world = 60
 @export var seanoise : FastNoiseLite
 @export var desertNoise : FastNoiseLite
 
+@export var foliage_noise : FastNoiseLite
+
 const SEA_LEVEL : int = 0
+
+var seed_to_save : String = ""
 
 func _ready():
 	randomize()
-	noise.seed = randi()
+	noise.seed = randi_range(0,9999)
+	foliage_noise.seed = randi_range(0,9999)
+	
+	print(str(noise.seed).pad_zeros(4), str(foliage_noise.seed).pad_zeros(4))
 	
 	for x in range(-x_length,x_length):
 		var y = ceil(noise.get_noise_1d(x) * height)
-		
-		
 		if (y > SEA_LEVEL-2 || biomenoise.get_noise_1d(x) < 0):
 			self.set_cell(Vector2i(x,y),0, Vector2i(0,1))
 		else:
+			if (foliage_noise.get_noise_1d(x) > 0.9):
+				self.set_cell(Vector2i(x,y-1),0,Vector2i(1,1))
+				create_tree(x,y-1)
 			self.set_cell(Vector2i(x,y),0, Vector2i(0,0))
 		for y2 in range(1,4):
 			if (y > SEA_LEVEL-2 || biomenoise.get_noise_1d(x) < 0):
@@ -50,6 +58,18 @@ func _input(_event: InputEvent) -> void:
 
 func _process(_delta: float) -> void:
 	pass
+
+func create_tree(x,y):
+	var tree_height = randi_range(8,20)
+	for tree_y in range (-1, tree_height):
+		set_cell(Vector2i(x,y-tree_y),0,Vector2i(1,1))
+		set_cell(Vector2i(x+1,y-tree_y),0,Vector2i(1,1))
+	for width_leaf in range(-2,4):
+		for height_leaf in range(0,4):
+			set_cell(Vector2i(x+width_leaf,y-tree_height-2+height_leaf),0,Vector2i(2,1))
+	for width_leaf in range(-1,3):
+		set_cell(Vector2i(x+width_leaf,y-tree_height-3),0,Vector2i(2,1))
+	
 
 func update():
 	pass

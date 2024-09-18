@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://ckvtqbfd38e7h"]
+[gd_scene load_steps=26 format=3 uid="uid://dwhrx6mde2gx1"]
 
 [ext_resource type="Texture2D" uid="uid://xau6mtt07cnr" path="res://Visuals/Characters/Player/leg.png" id="1_nk3ii"]
 [ext_resource type="Script" path="res://Scripts/Characters/player.gd" id="1_uh5f4"]
@@ -35,7 +35,7 @@ animation = &"idle"
 [sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_gmkk5"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_di55d"]
-graph_offset = Vector2(-237.899, -5.05264)
+graph_offset = Vector2(-41.0086, -132.485)
 nodes/Add2/node = SubResource("AnimationNodeAdd2_gempn")
 nodes/Add2/position = Vector2(106.67, 25.78)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_jyetk")
@@ -192,23 +192,6 @@ tracks/10/keys = {
 "values": [Vector2(6, -8)]
 }
 
-[sub_resource type="Animation" id="Animation_cks6m"]
-resource_name = "idle"
-length = 10.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("visuals/Body/Head/Eyelid:offset")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 9, 9.23333, 9.5, 9.73333, 10),
-"transitions": PackedFloat32Array(1, 1e-05, 1e-05, 1.1487e-05, 1e-05, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 2), Vector2(0, 0), Vector2(0, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_e5cfn"]
 resource_name = "breathing"
 length = 8.0
@@ -226,57 +209,21 @@ tracks/0/keys = {
 "values": [0.0, -0.0174533, 0.0]
 }
 
-[sub_resource type="Animation" id="Animation_peprl"]
-resource_name = "walking"
-length = 2.0
+[sub_resource type="Animation" id="Animation_cks6m"]
+resource_name = "idle"
+length = 10.0
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("visuals/LeftLeg:rotation")
+tracks/0/path = NodePath("visuals/Body/Head/Eyelid:offset")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 9, 9.23333, 9.5, 9.73333, 10),
+"transitions": PackedFloat32Array(1, 1e-05, 1e-05, 1.1487e-05, 1e-05, 1),
 "update": 0,
-"values": [0.0, 0.785398, 0.0, -0.785398, 0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("visuals/RightLeg:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, -0.785398, 0.0, 0.785398, 0.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("visuals/Body/LeftArm:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, -0.349066, 0.0, 0.349066, 0.0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("visuals/Body/RightArm:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 0.349066, 0.0, -0.349066, 0.0]
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 2), Vector2(0, 0), Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_pt6od"]
@@ -403,6 +350,59 @@ tracks/9/keys = {
 "values": [Vector2(4.715, -8.535)]
 }
 
+[sub_resource type="Animation" id="Animation_peprl"]
+resource_name = "walking"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("visuals/LeftLeg:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.785398, 0.0, -0.785398, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("visuals/RightLeg:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.785398, 0.0, 0.785398, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("visuals/Body/LeftArm:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.349066, 0.0, 0.349066, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("visuals/Body/RightArm:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.349066, 0.0, -0.349066, 0.0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3c7gf"]
 _data = {
 "RESET": SubResource("Animation_3mwnn"),
@@ -486,8 +486,8 @@ root_node = NodePath("%AnimationTree/..")
 tree_root = SubResource("AnimationNodeBlendTree_di55d")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Add2/add_amount = 1.0
-parameters/Blend2/blend_amount = 0.0
-parameters/Movement/add_amount = 0.0
+parameters/Blend2/blend_amount = 1.0
+parameters/Movement/add_amount = 1.0
 parameters/TimeScale/scale = 4.0
 "parameters/TimeScale 2/scale" = 2.0
 

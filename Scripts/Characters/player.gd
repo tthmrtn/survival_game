@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
 enum SPEEDSTATE {
-	WALKING = 30,
-	RUNNING = 60,
-	BACKWARDS = 15
+	WALKING = 40,
+	RUNNING = 80,
+	BACKWARDS = 20
 }
 
 const JUMP_VELOCITY = -200.0
