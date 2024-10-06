@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6ge43d788yww"]
+
+[ext_resource type="Texture2D" uid="uid://bqdb5va1wrx5f" path="res://Visuals/TileSets/world_basic.png" id="1_wifxv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0p3x"]
+atlas = ExtResource("1_wifxv")
+region = Rect2(0, 0, 16, 16)
+
+[node name="Inventory_Block_Selector" type="Button"]
+icon = SubResource("AtlasTexture_q0p3x")
