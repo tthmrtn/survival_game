@@ -31,10 +31,15 @@ theme_override_constants/separation = 17
 layout_mode = 2
 text = "PLAY"
 
+[node name="Character_Creator_Button" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Character Creator"
+
 [node name="Exit_Button" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 10
 text = "EXIT"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play_Button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Character_Creator_Button" to="." method="_on_character_creator_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Exit_Button" to="." method="_on_exit_button_pressed"]

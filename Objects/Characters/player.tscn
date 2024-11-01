@@ -1,21 +1,18 @@
-[gd_scene load_steps=37 format=3 uid="uid://cwhjfp5mathi3"]
+[gd_scene load_steps=34 format=3 uid="uid://cwhjfp5mathi3"]
 
 [ext_resource type="Script" path="res://Scripts/Characters/player.gd" id="1_2t5l6"]
-[ext_resource type="Texture2D" uid="uid://c3a3x6hwldcal" path="res://Visuals/Characters/Player/Player(Lower_left_arm) _0001.png" id="1_ut5ah"]
-[ext_resource type="Texture2D" uid="uid://qailgo1wk6nr" path="res://Visuals/Characters/Player/Player(Upper_left_arm) _0001.png" id="2_t8eaj"]
-[ext_resource type="Texture2D" uid="uid://68o5ltsopfuc" path="res://Visuals/Characters/Player/Player(Lower_left_leg) _0001.png" id="3_i5qvi"]
-[ext_resource type="Texture2D" uid="uid://bj6t3q5r27wfo" path="res://Visuals/Characters/Player/Player(Upper_left_leg) _0001.png" id="4_ohglp"]
-[ext_resource type="Texture2D" uid="uid://bmrqb63gecqhb" path="res://Visuals/Characters/Player/Player(Left_foot) _0001.png" id="5_b0ejk"]
-[ext_resource type="Texture2D" uid="uid://dbdiagbvtyhfh" path="res://Visuals/Characters/Player/Player(Mid_body) _0001.png" id="6_lho11"]
-[ext_resource type="Texture2D" uid="uid://kudg4fwn6v7i" path="res://Visuals/Characters/Player/Player(Lower_body) _0001.png" id="7_xahs8"]
-[ext_resource type="Texture2D" uid="uid://crvy1gcrlufum" path="res://Visuals/Characters/Player/Player(Lower_right_leg) _0001.png" id="8_gs08h"]
-[ext_resource type="Texture2D" uid="uid://qki7fncykt47" path="res://Visuals/Characters/Player/Player(Upper_right_leg) _0001.png" id="9_d0n51"]
-[ext_resource type="Texture2D" uid="uid://5tvnwlat4w43" path="res://Visuals/Characters/Player/Player(Right_foot) _0001.png" id="10_7627u"]
-[ext_resource type="Texture2D" uid="uid://dm6jmo27oatnd" path="res://Visuals/Characters/Player/Player(Upper_body) _0001.png" id="11_cai7p"]
-[ext_resource type="Texture2D" uid="uid://cpue3t6dtxb7n" path="res://Visuals/Characters/Player/Player(Head) _0001.png" id="12_ngg2k"]
-[ext_resource type="Texture2D" uid="uid://vkb8hyw8i2i2" path="res://Visuals/Characters/Player/Player(Lower_right_arm) _0001.png" id="13_2dud6"]
-[ext_resource type="Texture2D" uid="uid://cybg4hff0srd4" path="res://Visuals/Characters/Player/Player(Upper_right_arm) _0001.png" id="14_pmpgd"]
-[ext_resource type="Texture2D" uid="uid://cg3qr42d57vqn" path="res://Visuals/Weapons/test_sword.png" id="16_8iqs0"]
+[ext_resource type="PackedScene" uid="uid://crxnq18i2msyo" path="res://Visuals/Characters/Player/visual_container.tscn" id="2_lbgyl"]
+[ext_resource type="Texture2D" uid="uid://fev1bw6nskxt" path="res://Visuals/Characters/Player/player(Pupil) _0001.png" id="3_4qflj"]
+[ext_resource type="Texture2D" uid="uid://dscyln0706cuc" path="res://Visuals/Characters/Player/player(Hair1) _0001.png" id="3_8qoed"]
+[ext_resource type="Texture2D" uid="uid://dwt2toekxwmd0" path="res://Visuals/Characters/Player/player(Shirt1_Upper_left_arm) _0001.png" id="3_ltvg7"]
+[ext_resource type="Texture2D" uid="uid://u83hs653ek2e" path="res://Visuals/Characters/Player/player(Shirt1_Mid_body) _0001.png" id="4_18cwr"]
+[ext_resource type="Texture2D" uid="uid://cppi0fbkiqd86" path="res://Visuals/Characters/Player/pants(Pant1_Lower_left_leg) _0001.png" id="4_xvoyi"]
+[ext_resource type="Texture2D" uid="uid://jltobyhblkap" path="res://Visuals/Characters/Player/player(Shirt1_Upper_body) _0001.png" id="5_eidyq"]
+[ext_resource type="Texture2D" uid="uid://djkkr25ns2sab" path="res://Visuals/Characters/Player/pants(Pant1_Upper_left_leg) _0001.png" id="5_xeudf"]
+[ext_resource type="Texture2D" uid="uid://bu24gsv0x83yu" path="res://Visuals/Characters/Player/pants(Pant1_Lower_body) _0001.png" id="7_5sxc3"]
+[ext_resource type="Texture2D" uid="uid://l4f3uyjdl7lp" path="res://Visuals/Characters/Player/player(Shirt1_Upper_right_arm) _0001.png" id="8_cojh5"]
+[ext_resource type="Texture2D" uid="uid://4xqhtpb1uevh" path="res://Visuals/Characters/Player/pants(Pant1_Lower_right_leg) _0001.png" id="8_in5lf"]
+[ext_resource type="Texture2D" uid="uid://dodri1m3rjvdp" path="res://Visuals/Characters/Player/pants(Pant1_Upper_right_leg) _0001.png" id="9_mcq8d"]
 [ext_resource type="PackedScene" uid="uid://bud1s1soajkjw" path="res://Components/hurtbox_component.tscn" id="17_1mou8"]
 [ext_resource type="PackedScene" uid="uid://cdg83kuw0dl6i" path="res://Components/health_component.tscn" id="18_ipdx3"]
 [ext_resource type="PackedScene" uid="uid://btew5s1ddreev" path="res://Components/velocity_component.tscn" id="19_x26ck"]
@@ -25,7 +22,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Upper_Right_Arm/Lower_Right_Arm:rotation")
+tracks/0/path = NodePath("Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Upper_Right_Arm/Lower_Right_Arm:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -37,7 +34,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Upper_Right_Arm:rotation")
+tracks/1/path = NodePath("Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Upper_Right_Arm:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -49,7 +46,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Upper_Left_Arm:rotation")
+tracks/2/path = NodePath("Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Upper_Left_Arm:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -61,7 +58,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Skeleton2D/Upper_Right_Leg:rotation")
+tracks/3/path = NodePath("Visual_Container/Skeleton2D/Upper_Right_Leg:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -73,7 +70,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Skeleton2D/Upper_Right_Leg/Lower_Right_Leg:rotation")
+tracks/4/path = NodePath("Visual_Container/Skeleton2D/Upper_Right_Leg/Lower_Right_Leg:rotation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -85,7 +82,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Skeleton2D/Lower_Body/Mid_Body:rotation")
+tracks/5/path = NodePath("Visual_Container/Skeleton2D/Lower_Body/Mid_Body:rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -97,7 +94,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Head:rotation")
+tracks/6/path = NodePath("Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Head:rotation")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -109,7 +106,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Upper_Left_Arm/Lower_Left_Arm:rotation")
+tracks/7/path = NodePath("Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Upper_Left_Arm/Lower_Left_Arm:rotation")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -121,7 +118,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Skeleton2D/Upper_Right_Leg/Lower_Right_Leg/Right_Foot:rotation")
+tracks/8/path = NodePath("Visual_Container/Skeleton2D/Upper_Right_Leg/Lower_Right_Leg/Right_Foot:rotation")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -133,7 +130,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Skeleton2D/Upper_Left_Leg:rotation")
+tracks/9/path = NodePath("Visual_Container/Skeleton2D/Upper_Left_Leg:rotation")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -145,7 +142,7 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Skeleton2D/Upper_Left_Leg/Lower_Left_Leg:rotation")
+tracks/10/path = NodePath("Visual_Container/Skeleton2D/Upper_Left_Leg/Lower_Left_Leg:rotation")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -157,7 +154,7 @@ tracks/10/keys = {
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("Skeleton2D/Lower_Body:position")
+tracks/11/path = NodePath("Visual_Container/Skeleton2D/Lower_Body:position")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
@@ -169,7 +166,7 @@ tracks/11/keys = {
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("Skeleton2D/Upper_Left_Leg/Lower_Left_Leg/Left_Foot:rotation")
+tracks/12/path = NodePath("Visual_Container/Skeleton2D/Upper_Left_Leg/Lower_Left_Leg/Left_Foot:rotation")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
@@ -181,7 +178,7 @@ tracks/12/keys = {
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("Skeleton2D:position")
+tracks/13/path = NodePath("Visual_Container/Skeleton2D:position")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
@@ -193,7 +190,7 @@ tracks/13/keys = {
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("Skeleton2D/Lower_Body/Mid_Body/Upper_Body:rotation")
+tracks/14/path = NodePath("Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body:rotation")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
@@ -205,7 +202,7 @@ tracks/14/keys = {
 tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("Skeleton2D/Lower_Body:rotation")
+tracks/15/path = NodePath("Visual_Container/Skeleton2D/Lower_Body:rotation")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
@@ -221,7 +218,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Upper_Right_Arm:rotation")
+tracks/0/path = NodePath("Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Upper_Right_Arm:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -233,7 +230,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Upper_Right_Arm/Lower_Right_Arm:rotation")
+tracks/1/path = NodePath("Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Upper_Right_Arm/Lower_Right_Arm:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -245,7 +242,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Upper_Left_Arm:rotation")
+tracks/2/path = NodePath("Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Upper_Left_Arm:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -257,7 +254,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Skeleton2D/Upper_Right_Leg:rotation")
+tracks/3/path = NodePath("Visual_Container/Skeleton2D/Upper_Right_Leg:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -269,7 +266,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Skeleton2D/Upper_Right_Leg/Lower_Right_Leg:rotation")
+tracks/4/path = NodePath("Visual_Container/Skeleton2D/Upper_Right_Leg/Lower_Right_Leg:rotation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -281,7 +278,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Skeleton2D/Lower_Body/Mid_Body:rotation")
+tracks/5/path = NodePath("Visual_Container/Skeleton2D/Lower_Body/Mid_Body:rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -293,7 +290,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Head:rotation")
+tracks/6/path = NodePath("Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Head:rotation")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -305,7 +302,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Upper_Left_Arm/Lower_Left_Arm:rotation")
+tracks/7/path = NodePath("Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Upper_Left_Arm/Lower_Left_Arm:rotation")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -317,7 +314,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Skeleton2D/Upper_Right_Leg/Lower_Right_Leg/Right_Foot:rotation")
+tracks/8/path = NodePath("Visual_Container/Skeleton2D/Upper_Right_Leg/Lower_Right_Leg/Right_Foot:rotation")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -335,7 +332,7 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Skeleton2D/Upper_Right_Leg:rotation")
+tracks/0/path = NodePath("Visual_Container/Skeleton2D/Upper_Right_Leg:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -347,7 +344,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Skeleton2D/Upper_Left_Leg:rotation")
+tracks/1/path = NodePath("Visual_Container/Skeleton2D/Upper_Left_Leg:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -359,7 +356,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Skeleton2D/Upper_Left_Leg/Lower_Left_Leg:rotation")
+tracks/2/path = NodePath("Visual_Container/Skeleton2D/Upper_Left_Leg/Lower_Left_Leg:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -371,7 +368,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Skeleton2D/Upper_Right_Leg/Lower_Right_Leg:rotation")
+tracks/3/path = NodePath("Visual_Container/Skeleton2D/Upper_Right_Leg/Lower_Right_Leg:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -383,7 +380,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Skeleton2D/Lower_Body:rotation")
+tracks/4/path = NodePath("Visual_Container/Skeleton2D/Lower_Body:rotation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -395,7 +392,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Upper_Right_Arm:rotation")
+tracks/5/path = NodePath("Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Upper_Right_Arm:rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -407,7 +404,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Upper_Right_Arm/Lower_Right_Arm:rotation")
+tracks/6/path = NodePath("Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Upper_Right_Arm/Lower_Right_Arm:rotation")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -419,7 +416,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Upper_Left_Arm:rotation")
+tracks/7/path = NodePath("Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Upper_Left_Arm:rotation")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -431,7 +428,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Upper_Left_Arm/Lower_Left_Arm:rotation")
+tracks/8/path = NodePath("Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Upper_Left_Arm/Lower_Left_Arm:rotation")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -443,7 +440,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Skeleton2D/Lower_Body/Mid_Body:rotation")
+tracks/9/path = NodePath("Visual_Container/Skeleton2D/Lower_Body/Mid_Body:rotation")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -455,7 +452,7 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Skeleton2D/Lower_Body/Mid_Body/Upper_Body:rotation")
+tracks/10/path = NodePath("Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body:rotation")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -467,7 +464,7 @@ tracks/10/keys = {
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Head:rotation")
+tracks/11/path = NodePath("Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Head:rotation")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
@@ -479,7 +476,7 @@ tracks/11/keys = {
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("Skeleton2D:position")
+tracks/12/path = NodePath("Visual_Container/Skeleton2D:position")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
@@ -497,7 +494,7 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Skeleton2D/Upper_Right_Leg:rotation")
+tracks/0/path = NodePath("Visual_Container/Skeleton2D/Upper_Right_Leg:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -509,7 +506,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Skeleton2D/Upper_Left_Leg:rotation")
+tracks/1/path = NodePath("Visual_Container/Skeleton2D/Upper_Left_Leg:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -521,7 +518,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Skeleton2D/Upper_Right_Leg/Lower_Right_Leg:rotation")
+tracks/2/path = NodePath("Visual_Container/Skeleton2D/Upper_Right_Leg/Lower_Right_Leg:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -533,7 +530,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Skeleton2D/Upper_Left_Leg/Lower_Left_Leg:rotation")
+tracks/3/path = NodePath("Visual_Container/Skeleton2D/Upper_Left_Leg/Lower_Left_Leg:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -545,7 +542,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Skeleton2D/Lower_Body:position")
+tracks/4/path = NodePath("Visual_Container/Skeleton2D/Lower_Body:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -557,7 +554,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Skeleton2D/Upper_Right_Leg/Lower_Right_Leg/Right_Foot:rotation")
+tracks/5/path = NodePath("Visual_Container/Skeleton2D/Upper_Right_Leg/Lower_Right_Leg/Right_Foot:rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -569,7 +566,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Skeleton2D/Upper_Left_Leg/Lower_Left_Leg/Left_Foot:rotation")
+tracks/6/path = NodePath("Visual_Container/Skeleton2D/Upper_Left_Leg/Lower_Left_Leg/Left_Foot:rotation")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -581,7 +578,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Upper_Left_Arm/Lower_Left_Arm:rotation")
+tracks/7/path = NodePath("Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Upper_Left_Arm/Lower_Left_Arm:rotation")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -593,7 +590,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Upper_Right_Arm/Lower_Right_Arm:rotation")
+tracks/8/path = NodePath("Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Upper_Right_Arm/Lower_Right_Arm:rotation")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -605,7 +602,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Skeleton2D:position")
+tracks/9/path = NodePath("Visual_Container/Skeleton2D:position")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -617,7 +614,7 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Upper_Right_Arm:rotation")
+tracks/10/path = NodePath("Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Upper_Right_Arm:rotation")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -629,7 +626,7 @@ tracks/10/keys = {
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Upper_Left_Arm:rotation")
+tracks/11/path = NodePath("Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Upper_Left_Arm:rotation")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
@@ -641,7 +638,7 @@ tracks/11/keys = {
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("Skeleton2D/Lower_Body/Mid_Body/Upper_Body:rotation")
+tracks/12/path = NodePath("Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body:rotation")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
@@ -653,7 +650,7 @@ tracks/12/keys = {
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Head:rotation")
+tracks/13/path = NodePath("Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Head:rotation")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
@@ -665,7 +662,7 @@ tracks/13/keys = {
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("Skeleton2D/Lower_Body:rotation")
+tracks/14/path = NodePath("Visual_Container/Skeleton2D/Lower_Body:rotation")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
@@ -744,248 +741,150 @@ metadata/_edit_lock_ = true
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(0, 12, 5, 12, 7, 3, 7, -34, -7, -34, -7, 3, -5, 12)
 
-[node name="Visuals" type="Node2D" parent="."]
+[node name="Visual_Container" parent="." instance=ExtResource("2_lbgyl")]
 unique_name_in_owner = true
-position = Vector2(0, -6)
-metadata/_edit_lock_ = true
-metadata/_edit_group_ = true
 
-[node name="Lower_Left_Arm" type="Sprite2D" parent="Visuals"]
-position = Vector2(4.69276, -8.12832)
-rotation = 1.44826
-scale = Vector2(0.999951, 0.999951)
-texture = ExtResource("1_ut5ah")
-offset = Vector2(-9, 11)
+[node name="Lower_Left_Arm" parent="Visual_Container/Visuals" index="0"]
+position = Vector2(3.94302, -8.20735)
+rotation = 1.38329
+scale = Vector2(0.999943, 0.999943)
 
-[node name="Upper_Left_Arm" type="Sprite2D" parent="Visuals"]
-position = Vector2(3.77625, -16.0753)
-rotation = 1.45598
-scale = Vector2(0.999963, 0.999963)
-texture = ExtResource("2_t8eaj")
-offset = Vector2(-1, 11)
+[node name="Upper_Left_Arm" parent="Visual_Container/Visuals" index="1"]
+position = Vector2(3.54438, -16.1971)
+rotation = 1.52094
+scale = Vector2(0.999956, 0.999956)
 
-[node name="Lower_Left_Leg" type="Sprite2D" parent="Visuals"]
-z_index = 2
-position = Vector2(2, 6)
-texture = ExtResource("3_i5qvi")
-offset = Vector2(2, -10)
-
-[node name="Upper_Left_Leg" type="Sprite2D" parent="Visuals"]
-z_index = 2
-position = Vector2(2, -5)
-texture = ExtResource("4_ohglp")
-offset = Vector2(2, 2)
-
-[node name="Left_Foot" type="Sprite2D" parent="Visuals"]
-z_index = 2
-position = Vector2(2, 15)
-texture = ExtResource("5_b0ejk")
-offset = Vector2(2, -19)
-
-[node name="Mid_Body" type="Sprite2D" parent="Visuals"]
-z_index = 2
-position = Vector2(-0.0872621, -8.99924)
-rotation = -0.0193832
-scale = Vector2(0.999985, 0.999985)
-texture = ExtResource("6_lho11")
-offset = Vector2(4, 4)
-
-[node name="Lower_Body" type="Sprite2D" parent="Visuals"]
-z_index = 2
-position = Vector2(0, -4)
-rotation = -0.0174533
-texture = ExtResource("7_xahs8")
-offset = Vector2(4, 0)
-
-[node name="Lower_Right_Leg" type="Sprite2D" parent="Visuals"]
-z_index = 2
-position = Vector2(-3.78316, 4.68896)
-rotation = 0.139626
-scale = Vector2(0.999999, 0.999999)
-texture = ExtResource("8_gs08h")
-offset = Vector2(6, -10)
-
-[node name="Upper_Right_Leg" type="Sprite2D" parent="Visuals"]
-z_index = 2
-position = Vector2(-1, -6)
-rotation = 0.164061
-scale = Vector2(0.999999, 0.999999)
-texture = ExtResource("9_d0n51")
-offset = Vector2(5, 2)
-
-[node name="Right_Foot" type="Sprite2D" parent="Visuals"]
-z_index = 2
-position = Vector2(-5.03571, 13.6014)
-rotation = 0.0174534
-scale = Vector2(0.999995, 0.999995)
-texture = ExtResource("10_7627u")
-offset = Vector2(6, -19)
-
-[node name="Upper_Body" type="Sprite2D" parent="Visuals"]
-z_index = 2
-position = Vector2(-0.184171, -13.9982)
-rotation = -0.0193832
-scale = Vector2(0.999985, 0.999985)
-texture = ExtResource("11_cai7p")
-offset = Vector2(4, 12)
-
-[node name="Head" type="Sprite2D" parent="Visuals"]
-z_index = 2
-position = Vector2(-1.30026, -19.9776)
-rotation = -0.0155234
-scale = Vector2(0.999964, 0.999964)
-texture = ExtResource("12_ngg2k")
-offset = Vector2(5, 18)
-
-[node name="Lower_Right_Arm" type="Sprite2D" parent="Visuals"]
-z_index = 4
-position = Vector2(-6.30206, -9.17374)
-rotation = -1.64355
-scale = Vector2(0.999973, 0.999973)
-texture = ExtResource("13_2dud6")
-offset = Vector2(16, 11)
-
-[node name="Upper_Right_Arm" type="Sprite2D" parent="Visuals"]
-z_index = 4
-position = Vector2(-4.22212, -15.9203)
-rotation = -1.31717
-scale = Vector2(0.999974, 0.999974)
-texture = ExtResource("14_pmpgd")
-offset = Vector2(9, 11)
-
-[node name="Skeleton2D" type="Skeleton2D" parent="."]
+[node name="Upper_Left_Arm_Shirt" type="Sprite2D" parent="Visual_Container/Visuals/Upper_Left_Arm" index="0"]
 unique_name_in_owner = true
-modulate = Color(1, 1, 1, 0.231373)
-metadata/_edit_lock_ = true
-metadata/_edit_group_ = true
-
-[node name="Lower_Body" type="Bone2D" parent="Skeleton2D"]
-position = Vector2(0, -10)
-rotation = -0.0174533
-rest = Transform2D(1, 0, 0, 1, 0, -10)
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Skeleton2D/Lower_Body"]
-remote_path = NodePath("../../../Visuals/Lower_Body")
-
-[node name="Mid_Body" type="Bone2D" parent="Skeleton2D/Lower_Body"]
-position = Vector2(0, -5)
-scale = Vector2(0.999985, 0.999985)
-rest = Transform2D(1, 0, 0, 1, 0, -5)
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Skeleton2D/Lower_Body/Mid_Body"]
-remote_path = NodePath("../../../../Visuals/Mid_Body")
-
-[node name="Upper_Body" type="Bone2D" parent="Skeleton2D/Lower_Body/Mid_Body"]
-position = Vector2(0, -5)
-rest = Transform2D(1, 0, 0, 1, 0, -5)
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Skeleton2D/Lower_Body/Mid_Body/Upper_Body"]
-remote_path = NodePath("../../../../../Visuals/Upper_Body")
-
-[node name="Head" type="Bone2D" parent="Skeleton2D/Lower_Body/Mid_Body/Upper_Body"]
-position = Vector2(-1, -6)
-scale = Vector2(0.999979, 0.999979)
-rest = Transform2D(1, 0, 0, 1, -1, -8)
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Head"]
-remote_path = NodePath("../../../../../../Visuals/Head")
-
-[node name="Upper_Right_Arm" type="Bone2D" parent="Skeleton2D/Lower_Body/Mid_Body/Upper_Body"]
-position = Vector2(-4, -2)
-rotation = -1.30551
-scale = Vector2(0.999989, 0.999989)
-rest = Transform2D(1, 0, 0, 1, -4, -2)
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Upper_Right_Arm"]
-remote_path = NodePath("../../../../../../Visuals/Upper_Right_Arm")
-
-[node name="Lower_Right_Arm" type="Bone2D" parent="Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Upper_Right_Arm"]
-position = Vector2(-8, 0)
-rotation = -0.326377
-scale = Vector2(0.999999, 0.999999)
-rest = Transform2D(1, 0, 0, 1, -10, 1)
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Upper_Right_Arm/Lower_Right_Arm"]
-position = Vector2(1, 0)
-remote_path = NodePath("../../../../../../../Visuals/Lower_Right_Arm")
-
-[node name="Right_Arm_Node" type="Node2D" parent="Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Upper_Right_Arm/Lower_Right_Arm"]
-unique_name_in_owner = true
-position = Vector2(-7.5, 0.5)
-
-[node name="Upper_Left_Arm" type="Bone2D" parent="Skeleton2D/Lower_Body/Mid_Body/Upper_Body"]
-position = Vector2(4, -2)
-rotation = 1.46957
-scale = Vector2(0.999978, 0.999978)
-rest = Transform2D(1, 0, 0, 1, 4, -2)
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Upper_Left_Arm"]
-remote_path = NodePath("../../../../../../Visuals/Upper_Left_Arm")
-
-[node name="Lower_Left_Arm" type="Bone2D" parent="Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Upper_Left_Arm"]
-position = Vector2(8, 0)
-scale = Vector2(0.999988, 0.999988)
-rest = Transform2D(1, 0, 0, 1, 10, 1)
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Upper_Left_Arm/Lower_Left_Arm"]
-remote_path = NodePath("../../../../../../../Visuals/Lower_Left_Arm")
-
-[node name="Left_Arm_Node" type="Node2D" parent="Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Upper_Left_Arm/Lower_Left_Arm"]
-unique_name_in_owner = true
-position = Vector2(7.5, 0.5)
-
-[node name="Upper_Right_Leg" type="Bone2D" parent="Skeleton2D"]
-position = Vector2(-1, -12)
-rotation = 0.164061
-scale = Vector2(0.999999, 0.999999)
-rest = Transform2D(1, 0, 0, 1, -2, -12)
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Skeleton2D/Upper_Right_Leg"]
-remote_path = NodePath("../../../Visuals/Upper_Right_Leg")
-
-[node name="Lower_Right_Leg" type="Bone2D" parent="Skeleton2D/Upper_Right_Leg"]
-position = Vector2(-1, 11)
-rotation = -0.164061
-rest = Transform2D(1, 0, 0, 1, 0, 11)
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Skeleton2D/Upper_Right_Leg/Lower_Right_Leg"]
-remote_path = NodePath("../../../../Visuals/Lower_Right_Leg")
-
-[node name="Right_Foot" type="Bone2D" parent="Skeleton2D/Upper_Right_Leg/Lower_Right_Leg"]
-position = Vector2(0, 9)
-scale = Vector2(0.999996, 0.999996)
-rest = Transform2D(1, 0, 0, 1, 0, 9)
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Skeleton2D/Upper_Right_Leg/Lower_Right_Leg/Right_Foot"]
-remote_path = NodePath("../../../../../Visuals/Right_Foot")
-
-[node name="Upper_Left_Leg" type="Bone2D" parent="Skeleton2D"]
-position = Vector2(2, -11)
-rest = Transform2D(1, 0, 0, 1, 3, -12)
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Skeleton2D/Upper_Left_Leg"]
-remote_path = NodePath("../../../Visuals/Upper_Left_Leg")
-
-[node name="Lower_Left_Leg" type="Bone2D" parent="Skeleton2D/Upper_Left_Leg"]
 position = Vector2(0, 11)
-rest = Transform2D(1, 0, 0, 1, 0, 11)
+scale = Vector2(1.00001, 1.00001)
+texture = ExtResource("3_ltvg7")
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Skeleton2D/Upper_Left_Leg/Lower_Left_Leg"]
-remote_path = NodePath("../../../../Visuals/Lower_Left_Leg")
+[node name="Lower_Left_Leg_Pant" type="Sprite2D" parent="Visual_Container/Visuals/Lower_Left_Leg" index="0"]
+unique_name_in_owner = true
+position = Vector2(2, -9)
+texture = ExtResource("4_xvoyi")
 
-[node name="Left_Foot" type="Bone2D" parent="Skeleton2D/Upper_Left_Leg/Lower_Left_Leg"]
-position = Vector2(0, 9)
-rest = Transform2D(1, 0, 0, 1, 0, 9)
+[node name="Upper_Left_Leg_Pant" type="Sprite2D" parent="Visual_Container/Visuals/Upper_Left_Leg" index="0"]
+unique_name_in_owner = true
+position = Vector2(2, 2)
+texture = ExtResource("5_xeudf")
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Skeleton2D/Upper_Left_Leg/Lower_Left_Leg/Left_Foot"]
-remote_path = NodePath("../../../../../Visuals/Left_Foot")
+[node name="Mid_Body" parent="Visual_Container/Visuals" index="5"]
+position = Vector2(-0.0872621, -8.99924)
+rotation = -0.0518669
+scale = Vector2(0.999981, 0.999981)
+
+[node name="Mid_Body_Shirt" type="Sprite2D" parent="Visual_Container/Visuals/Mid_Body" index="0"]
+unique_name_in_owner = true
+position = Vector2(4, 4)
+scale = Vector2(1.00002, 1.00002)
+texture = ExtResource("4_18cwr")
+
+[node name="Lower_Body_Pant" type="Sprite2D" parent="Visual_Container/Visuals/Lower_Body" index="0"]
+unique_name_in_owner = true
+position = Vector2(4, 0)
+texture = ExtResource("7_5sxc3")
+
+[node name="Lower_Right_Leg" parent="Visual_Container/Visuals" index="7"]
+position = Vector2(-3.78316, 4.68896)
+scale = Vector2(0.999999, 0.999999)
+
+[node name="Lower_Right_Leg_Pant" type="Sprite2D" parent="Visual_Container/Visuals/Lower_Right_Leg" index="0"]
+unique_name_in_owner = true
+position = Vector2(6, -10)
+texture = ExtResource("8_in5lf")
+
+[node name="Upper_Right_Leg_Pant" type="Sprite2D" parent="Visual_Container/Visuals/Upper_Right_Leg" index="0"]
+unique_name_in_owner = true
+position = Vector2(5, 2)
+texture = ExtResource("9_mcq8d")
+
+[node name="Right_Foot" parent="Visual_Container/Visuals" index="9"]
+position = Vector2(-5.03571, 13.6014)
+scale = Vector2(0.999995, 0.999995)
+
+[node name="Upper_Body" parent="Visual_Container/Visuals" index="10"]
+position = Vector2(-0.346476, -13.9924)
+rotation = -0.0518669
+scale = Vector2(0.999981, 0.999981)
+
+[node name="Upper_Body_Shirt" type="Sprite2D" parent="Visual_Container/Visuals/Upper_Body" index="0"]
+unique_name_in_owner = true
+position = Vector2(4, 12)
+scale = Vector2(1.00002, 1.00002)
+texture = ExtResource("5_eidyq")
+
+[node name="Head" parent="Visual_Container/Visuals" index="11"]
+position = Vector2(-1.65617, -19.9324)
+rotation = 0.0169603
+scale = Vector2(0.999957, 0.999957)
+
+[node name="Pupil" type="Sprite2D" parent="Visual_Container/Visuals/Head" index="0"]
+unique_name_in_owner = true
+modulate = Color(0.44728, 0.239807, 1.44392e-07, 1)
+position = Vector2(5, 18)
+scale = Vector2(1.00004, 1.00004)
+texture = ExtResource("3_4qflj")
+
+[node name="Hair" type="Sprite2D" parent="Visual_Container/Visuals/Head" index="1"]
+unique_name_in_owner = true
+modulate = Color(0.447059, 0.239216, 0, 1)
+position = Vector2(5, 18)
+scale = Vector2(1.00004, 1.00004)
+texture = ExtResource("3_8qoed")
+
+[node name="Lower_Right_Arm" parent="Visual_Container/Visuals" index="12"]
+position = Vector2(-7.1712, -9.2702)
+rotation = -1.5461
+scale = Vector2(0.999968, 0.999968)
+
+[node name="Upper_Right_Arm" parent="Visual_Container/Visuals" index="13"]
+position = Vector2(-4.4447, -15.7823)
+rotation = -1.21972
+scale = Vector2(0.999969, 0.999969)
+
+[node name="Upper_Right_Arm_Shirt" type="Sprite2D" parent="Visual_Container/Visuals/Upper_Right_Arm" index="0"]
+unique_name_in_owner = true
+position = Vector2(9, 11)
+scale = Vector2(1.00003, 1.00003)
+texture = ExtResource("8_cojh5")
+
+[node name="Skeleton2D" parent="Visual_Container" index="1"]
+visible = false
+
+[node name="Mid_Body" parent="Visual_Container/Skeleton2D/Lower_Body" index="1"]
+rotation = 0.0
+scale = Vector2(0.99998, 0.99998)
+
+[node name="Head" parent="Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body" index="1"]
+rotation = 0.0
+scale = Vector2(0.999977, 0.999977)
+
+[node name="Upper_Right_Arm" parent="Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body" index="2"]
+rotation = -1.30551
+scale = Vector2(0.999988, 0.999988)
+
+[node name="Upper_Left_Arm" parent="Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body" index="3"]
+rotation = 1.46957
+scale = Vector2(0.999976, 0.999976)
+
+[node name="Lower_Left_Arm" parent="Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Upper_Left_Arm" index="1"]
+rotation = 0.0
+scale = Vector2(0.999987, 0.999987)
+
+[node name="Lower_Right_Leg" parent="Visual_Container/Skeleton2D/Upper_Right_Leg" index="1"]
+rotation = -0.164061
+
+[node name="Right_Foot" parent="Visual_Container/Skeleton2D/Upper_Right_Leg/Lower_Right_Leg" index="1"]
+rotation = 0.0
+scale = Vector2(0.999996, 0.999996)
 
 [node name="TestSword" type="Sprite2D" parent="."]
 unique_name_in_owner = true
 modulate = Color(1, 0.454752, 0.257049, 1)
 position = Vector2(-47, -0.5)
 rotation = 1.49226
-texture = ExtResource("16_8iqs0")
 offset = Vector2(0, -8)
 
 [node name="TestSword2" type="Sprite2D" parent="."]
@@ -993,7 +892,6 @@ unique_name_in_owner = true
 modulate = Color(6.73831e-06, 0.785207, 0.92368, 1)
 position = Vector2(-46.5, 10)
 rotation = 1.49226
-texture = ExtResource("16_8iqs0")
 offset = Vector2(0, -8)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -1014,6 +912,9 @@ parameters/walk_or_run/blend_amount = 0.0
 
 [node name="Hurtbox_Component" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("17_1mou8")]
 health_component = NodePath("../Health_Component")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hurtbox_Component"]
+polygon = PackedVector2Array(7, 12, 7, -34, -7, -34, -7, 12)
 
 [node name="Health_Component" parent="." node_paths=PackedStringArray("health_bar") instance=ExtResource("18_ipdx3")]
 health_bar = NodePath("../Health_Bar")
@@ -1036,3 +937,5 @@ offset_bottom = -38.0
 theme = SubResource("Theme_gcxly")
 value = 100.0
 show_percentage = false
+
+[editable path="Visual_Container"]

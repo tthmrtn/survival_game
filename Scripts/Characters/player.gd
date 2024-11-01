@@ -13,23 +13,23 @@ var current_speed : float = MOVEMENT.WALKING
 
 const JUMP_VELOCITY = 200.0
 
-@onready var left_hand_node : Node2D = %Right_Arm_Node
-@onready var right_hand_node : Node2D = %Left_Arm_Node
+@onready var left_hand_node : Node2D = %Visual_Container.get_node("%Left_Arm_Node")
+@onready var right_hand_node : Node2D = %Visual_Container.get_node("%Left_Arm_Node")
+
+@onready var visible_left = left_hand_node
+@onready var visible_right = right_hand_node
+
+@onready var skeleton = %Visual_Container.get_node("%Skeleton2D")
 
 func _ready() -> void:
-	%TestSword.z_index = 3
-	%TestSword.global_position = %Right_Arm_Node.global_position
-	%TestSword.global_rotation = %Right_Arm_Node.global_rotation
-	%TestSword2.z_index = 1
-	%TestSword2.global_position = %Left_Arm_Node.global_position
-	%TestSword2.global_rotation = %Left_Arm_Node.global_rotation + PI
-
+	print(skeleton)
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey:
 		var direction = Vector2(Input.get_axis("left", "right"),0).normalized()
 		if direction.x:
-			%Skeleton2D.scale.x = direction.x
+			skeleton.scale.x = direction.x
+			
 		velocity_component.change_direction(direction)
 		
 		#JUMP
@@ -64,21 +64,8 @@ func _input(event: InputEvent) -> void:
 
 func _physics_process(delta: float) -> void:
 	if velocity.x > 0:
-		right_hand_node = %Right_Arm_Node
-		left_hand_node = %Left_Arm_Node
-		%TestSword.z_index = 3
-		%TestSword2.z_index = 1
+		visible_right = right_hand_node
+		visible_left = left_hand_node
 	elif velocity.x < 0:
-		right_hand_node = %Left_Arm_Node
-		left_hand_node = %Right_Arm_Node
-		%TestSword.z_index = 1
-		%TestSword2.z_index = 3
-	
-	if right_hand_node:
-		%TestSword.global_position = right_hand_node.global_position
-		%TestSword.global_rotation = right_hand_node.global_rotation + PI
-	if left_hand_node:
-		%TestSword2.global_position = left_hand_node.global_position
-		%TestSword2.global_rotation = left_hand_node.global_rotation
-		
-	#move_and_slide()
+		visible_right = left_hand_node
+		visible_left = right_hand_node

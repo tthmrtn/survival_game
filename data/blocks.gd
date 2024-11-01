@@ -14,6 +14,7 @@ class_name BLOCKS
 	"BIRCH_LOG": Vector2i(0,2)
 }
 
+
 func _get_block_atlas_coords_by_name(string: String):
 	return BLOCK_IDS[string]
 

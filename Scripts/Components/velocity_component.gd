@@ -1,6 +1,8 @@
 extends Node
 class_name Velocity_Component
 
+@export var capture_input : bool = true
+
 @export var body : CharacterBody2D
 @export var SPEED_STAGES : Dictionary = {"STANDING": 0}
 
@@ -8,6 +10,8 @@ class_name Velocity_Component
 @export var transition_speed : float = 0.1
 
 @export var affected_by_gravity : bool
+
+
 
 var current_speed_stage : String = "STANDING"
 var current_speed : float = SPEED_STAGES["STANDING"]

@@ -9,7 +9,7 @@
 [ext_resource type="TileSet" uid="uid://cjx0wr5alti0q" path="res://Visuals/TileSets/test_world.tres" id="4_40jkx"]
 [ext_resource type="Script" path="res://Scripts/world_gen.gd" id="4_bndg4"]
 [ext_resource type="Script" path="res://Scripts/terrain_mod.gd" id="5_voypv"]
-[ext_resource type="Script" path="res://Scripts/blocks.gd" id="6_7826e"]
+[ext_resource type="Script" path="res://data/blocks.gd" id="6_7826e"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_yfmfk")

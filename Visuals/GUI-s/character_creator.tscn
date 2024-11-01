@@ -1,0 +1,381 @@
+[gd_scene load_steps=3 format=3 uid="uid://dl2foxp1oq76s"]
+
+[ext_resource type="PackedScene" uid="uid://cwhjfp5mathi3" path="res://Objects/Characters/Player.tscn" id="1_p76s8"]
+[ext_resource type="Script" path="res://Scripts/GUI-code/character_creator.gd" id="1_t1pqn"]
+
+[node name="Character_Creator" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t1pqn")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Sidebar" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Panel" type="Panel" parent="MarginContainer/HBoxContainer/Sidebar"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/Sidebar"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Sidebar/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/Sidebar/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="MarginContainer/HBoxContainer/Sidebar/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "  <  "
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/Sidebar/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "CHARACTER
+CREATOR"
+horizontal_alignment = 1
+
+[node name="HairButton" type="Button" parent="MarginContainer/HBoxContainer/Sidebar/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Hair"
+
+[node name="ShirtButton" type="Button" parent="MarginContainer/HBoxContainer/Sidebar/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Shirt"
+
+[node name="PantsButton" type="Button" parent="MarginContainer/HBoxContainer/Sidebar/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Pants"
+
+[node name="SaveButton" type="Button" parent="MarginContainer/HBoxContainer/Sidebar/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+text = "Save
+"
+
+[node name="HairOptions" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Panel" type="Panel" parent="MarginContainer/HBoxContainer/HairOptions"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/HairOptions"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/HairOptions/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/HairOptions/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "HAIR OPTIONS"
+horizontal_alignment = 1
+
+[node name="HairColorPicker" type="ColorPicker" parent="MarginContainer/HBoxContainer/HairOptions/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/sv_width = 200
+theme_override_constants/sv_height = 200
+edit_alpha = false
+sampler_visible = false
+color_modes_visible = false
+sliders_visible = false
+hex_visible = false
+presets_visible = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/HairOptions/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 25
+
+[node name="PrevHairStyle" type="Button" parent="MarginContainer/HBoxContainer/HairOptions/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "  <  "
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/HairOptions/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Style"
+horizontal_alignment = 1
+
+[node name="NextHairStyle" type="Button" parent="MarginContainer/HBoxContainer/HairOptions/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "  >  "
+
+[node name="ShirtOptions" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Panel" type="Panel" parent="MarginContainer/HBoxContainer/ShirtOptions"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/ShirtOptions"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/ShirtOptions/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/ShirtOptions/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "SHIRT OPTIONS"
+horizontal_alignment = 1
+
+[node name="ShirtColorPicker" type="ColorPicker" parent="MarginContainer/HBoxContainer/ShirtOptions/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/sv_width = 200
+theme_override_constants/sv_height = 200
+edit_alpha = false
+sampler_visible = false
+color_modes_visible = false
+sliders_visible = false
+hex_visible = false
+presets_visible = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/ShirtOptions/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 25
+
+[node name="PrevShirtStyle" type="Button" parent="MarginContainer/HBoxContainer/ShirtOptions/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "  <  "
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/ShirtOptions/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Style"
+horizontal_alignment = 1
+
+[node name="NextShirtStyle" type="Button" parent="MarginContainer/HBoxContainer/ShirtOptions/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "  >  "
+
+[node name="PantsOptions" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Panel" type="Panel" parent="MarginContainer/HBoxContainer/PantsOptions"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/PantsOptions"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/PantsOptions/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/PantsOptions/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "PANTS OPTIONS"
+horizontal_alignment = 1
+
+[node name="PantColorPicker" type="ColorPicker" parent="MarginContainer/HBoxContainer/PantsOptions/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/sv_width = 200
+theme_override_constants/sv_height = 200
+edit_alpha = false
+sampler_visible = false
+color_modes_visible = false
+sliders_visible = false
+hex_visible = false
+presets_visible = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/PantsOptions/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 25
+
+[node name="PrevPantStyle" type="Button" parent="MarginContainer/HBoxContainer/PantsOptions/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "  <  "
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/PantsOptions/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Style"
+horizontal_alignment = 1
+
+[node name="NextPantStyle" type="Button" parent="MarginContainer/HBoxContainer/PantsOptions/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "  >  "
+
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Panel" type="Panel" parent="MarginContainer/HBoxContainer/MarginContainer3"]
+layout_mode = 2
+
+[node name="Player" parent="." instance=ExtResource("1_p76s8")]
+unique_name_in_owner = true
+position = Vector2(849, 431)
+scale = Vector2(9.79, 9.79)
+metadata/_edit_group_ = true
+
+[node name="CollisionPolygon2D" parent="Player" index="0"]
+visible = false
+
+[node name="Lower_Left_Arm" parent="Player/Visual_Container/Visuals" index="0"]
+position = Vector2(4.42786, -8.15336)
+rotation = 1.42524
+scale = Vector2(0.999937, 0.999937)
+
+[node name="Upper_Left_Arm" parent="Player/Visual_Container/Visuals" index="1"]
+position = Vector2(3.69453, -16.1193)
+rotation = 1.479
+scale = Vector2(0.999953, 0.999953)
+
+[node name="Lower_Left_Leg" parent="Player/Visual_Container/Visuals" index="2"]
+position = Vector2(2, 6)
+
+[node name="Upper_Left_Leg" parent="Player/Visual_Container/Visuals" index="3"]
+position = Vector2(2, -5)
+
+[node name="Left_Foot" parent="Player/Visual_Container/Visuals" index="4"]
+position = Vector2(2, 15)
+
+[node name="Mid_Body" parent="Player/Visual_Container/Visuals" index="5"]
+position = Vector2(-0.087265, -8.99924)
+rotation = -0.0308938
+scale = Vector2(0.999978, 0.999978)
+
+[node name="Lower_Right_Leg" parent="Player/Visual_Container/Visuals" index="7"]
+position = Vector2(-3.78315, 4.68896)
+
+[node name="Right_Foot" parent="Player/Visual_Container/Visuals" index="9"]
+position = Vector2(-5.03571, 13.6014)
+scale = Vector2(0.999995, 0.999995)
+
+[node name="Upper_Body" parent="Player/Visual_Container/Visuals" index="10"]
+position = Vector2(-0.241707, -13.9967)
+rotation = -0.0308938
+scale = Vector2(0.999978, 0.999978)
+
+[node name="Head" parent="Player/Visual_Container/Visuals" index="11"]
+position = Vector2(-1.42654, -19.9629)
+rotation = -0.00401284
+scale = Vector2(0.999954, 0.999954)
+
+[node name="Hair" parent="Player/Visual_Container/Visuals/Head" index="1"]
+modulate = Color(1, 1, 1, 1)
+
+[node name="Lower_Right_Arm" parent="Player/Visual_Container/Visuals" index="12"]
+position = Vector2(-6.61309, -9.20155)
+rotation = -1.60902
+scale = Vector2(0.999963, 0.999963)
+
+[node name="Upper_Right_Arm" parent="Player/Visual_Container/Visuals" index="13"]
+position = Vector2(-4.30148, -15.8722)
+rotation = -1.28264
+scale = Vector2(0.999964, 0.999964)
+
+[node name="Mid_Body" parent="Player/Visual_Container/Skeleton2D/Lower_Body" index="1"]
+scale = Vector2(0.999978, 0.999978)
+
+[node name="Head" parent="Player/Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body" index="1"]
+scale = Vector2(0.999976, 0.999976)
+
+[node name="Upper_Right_Arm" parent="Player/Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body" index="2"]
+scale = Vector2(0.999986, 0.999986)
+
+[node name="Upper_Left_Arm" parent="Player/Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body" index="3"]
+scale = Vector2(0.999975, 0.999975)
+
+[node name="Lower_Left_Arm" parent="Player/Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Upper_Left_Arm" index="1"]
+scale = Vector2(0.999984, 0.999984)
+
+[node name="Hurtbox_Component" parent="Player" index="6"]
+visible = false
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Velocity_Component" parent="Player" index="8"]
+capture_input = false
+affected_by_gravity = false
+
+[node name="Health_Bar" parent="Player" index="9"]
+visible = false
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Sidebar/MarginContainer/VBoxContainer/HBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Sidebar/MarginContainer/VBoxContainer/HairButton" to="." method="_on_hair_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Sidebar/MarginContainer/VBoxContainer/ShirtButton" to="." method="_on_shirt_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Sidebar/MarginContainer/VBoxContainer/PantsButton" to="." method="_on_pants_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Sidebar/MarginContainer/VBoxContainer/SaveButton" to="." method="_on_save_button_pressed"]
+[connection signal="color_changed" from="MarginContainer/HBoxContainer/HairOptions/MarginContainer/VBoxContainer/HairColorPicker" to="." method="_on_hair_color_picker_color_changed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/HairOptions/MarginContainer/VBoxContainer/HBoxContainer/PrevHairStyle" to="." method="_on_prev_hair_style_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/HairOptions/MarginContainer/VBoxContainer/HBoxContainer/NextHairStyle" to="." method="_on_next_hair_style_pressed"]
+[connection signal="color_changed" from="MarginContainer/HBoxContainer/ShirtOptions/MarginContainer/VBoxContainer/ShirtColorPicker" to="." method="_on_shirt_color_picker_color_changed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ShirtOptions/MarginContainer/VBoxContainer/HBoxContainer/PrevShirtStyle" to="." method="_on_prev_shirt_style_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ShirtOptions/MarginContainer/VBoxContainer/HBoxContainer/NextShirtStyle" to="." method="_on_next_shirt_style_pressed"]
+[connection signal="color_changed" from="MarginContainer/HBoxContainer/PantsOptions/MarginContainer/VBoxContainer/PantColorPicker" to="." method="_on_pant_color_picker_color_changed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/PantsOptions/MarginContainer/VBoxContainer/HBoxContainer/PrevPantStyle" to="." method="_on_prev_pant_style_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/PantsOptions/MarginContainer/VBoxContainer/HBoxContainer/NextPantStyle" to="." method="_on_next_pant_style_pressed"]
+
+[editable path="Player"]
+[editable path="Player/Visual_Container"]
