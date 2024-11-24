@@ -17,6 +17,9 @@ config/features=PackedStringArray("4.3", "GL Compatibility")
 [autoload]
 
 Global="*res://Scripts/global.gd"
+CharacterVisuals="*res://data/character_visuals.gd"
+Items="*res://data/items.gd"
+Blocks="*res://data/blocks.gd"
 
 [input]
 

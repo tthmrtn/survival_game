@@ -53,12 +53,6 @@ func _on_pants_button_pressed() -> void:
 
 # HAIR OPTIONS
 
-@onready var HAIR_STYLES = [
-	load("res://Visuals/Characters/Player/player(Hair1) _0001.png"),
-	load("res://Visuals/Characters/Player/player(Hair2) _0001.png"),
-	load("res://Visuals/Characters/Player/player(Hair3) _0001.png")
-]
-
 var hair_style_id = 0
 var hair_color : String
 
@@ -68,8 +62,8 @@ func modulate_hair(color: Color):
 
 
 func change_hair(id: int):
-	hair_style_id = id % HAIR_STYLES.size()
-	%Player.get_node("%Hair").texture = HAIR_STYLES[hair_style_id]
+	hair_style_id = id % CharacterVisuals.HAIR_STYLES.size()
+	%Player.get_node("%Hair").texture = load(CharacterVisuals.HAIR_STYLES[hair_style_id])
 
 func _on_hair_color_picker_color_changed(color: Color) -> void:
 	modulate_hair(color)
@@ -85,21 +79,6 @@ func _on_next_hair_style_pressed() -> void:
 
 # SHIRT OPTIONS
 
-@onready var SHIRT_STYLES = [
-	{
-		"UPPER_RIGHT_ARM": load("res://Visuals/Characters/Player/player(Shirt1_Upper_right_arm) _0001.png"),
-		"UPPER_LEFT_ARM": load("res://Visuals/Characters/Player/player(Shirt1_Upper_left_arm) _0001.png"),
-		"UPPER_BODY": load("res://Visuals/Characters/Player/player(Shirt1_Upper_body) _0001.png"),
-		"MID_BODY": load("res://Visuals/Characters/Player/player(Shirt1_Mid_body) _0001.png")
-	},
-	{
-		"UPPER_RIGHT_ARM": null,
-		"UPPER_LEFT_ARM": null,
-		"UPPER_BODY": load("res://Visuals/Characters/Player/player(Shirt1_Upper_body) _0001.png"),
-		"MID_BODY": load("res://Visuals/Characters/Player/player(Shirt1_Mid_body) _0001.png")
-	}
-]
-
 var shirt_style_id = 0
 var shirt_color : String
 
@@ -113,11 +92,11 @@ func modulate_shirt(color: Color):
 
 
 func change_shirt(id: int):
-	shirt_style_id = id % SHIRT_STYLES.size()
-	%Player.get_node("%Upper_Body_Shirt").texture = SHIRT_STYLES[shirt_style_id]["UPPER_BODY"]
-	%Player.get_node("%Mid_Body_Shirt").texture = SHIRT_STYLES[shirt_style_id]["MID_BODY"]
-	%Player.get_node("%Upper_Left_Arm_Shirt").texture = SHIRT_STYLES[shirt_style_id]["UPPER_LEFT_ARM"]
-	%Player.get_node("%Upper_Right_Arm_Shirt").texture = SHIRT_STYLES[shirt_style_id]["UPPER_RIGHT_ARM"]
+	shirt_style_id = id % CharacterVisuals.SHIRT_STYLES.size()
+	%Player.get_node("%Upper_Body_Shirt").texture = load(CharacterVisuals.SHIRT_STYLES[shirt_style_id]["UPPER_BODY"])
+	%Player.get_node("%Mid_Body_Shirt").texture = load(CharacterVisuals.SHIRT_STYLES[shirt_style_id]["MID_BODY"])
+	%Player.get_node("%Upper_Left_Arm_Shirt").texture = load(CharacterVisuals.SHIRT_STYLES[shirt_style_id]["UPPER_LEFT_ARM"])
+	%Player.get_node("%Upper_Right_Arm_Shirt").texture = load(CharacterVisuals.SHIRT_STYLES[shirt_style_id]["UPPER_RIGHT_ARM"])
 
 
 func _on_shirt_color_picker_color_changed(color: Color) -> void:
@@ -134,23 +113,6 @@ func _on_next_shirt_style_pressed() -> void:
 
 # PANT OPTIONS
 
-@onready var PANT_STYLES = [
-	{
-		"LOWER_BODY": load("res://Visuals/Characters/Player/pants(Pant1_Lower_body) _0001.png"),
-		"LOWER_LEFT_LEG": load("res://Visuals/Characters/Player/pants(Pant1_Lower_left_leg) _0001.png"),
-		"UPPER_LEFT_LEG": load("res://Visuals/Characters/Player/pants(Pant1_Upper_left_leg) _0001.png"),
-		"LOWER_RIGHT_LEG": load("res://Visuals/Characters/Player/pants(Pant1_Lower_right_leg) _0001.png"),
-		"UPPER_RIGHT_LEG": load("res://Visuals/Characters/Player/pants(Pant1_Upper_right_leg) _0001.png")
-	},
-	{
-		"LOWER_BODY": load("res://Visuals/Characters/Player/pants(Pant1_Lower_body) _0001.png"),
-		"LOWER_LEFT_LEG": null,
-		"UPPER_LEFT_LEG": load("res://Visuals/Characters/Player/pants(Pant1_Upper_left_leg) _0001.png"),
-		"LOWER_RIGHT_LEG": null,
-		"UPPER_RIGHT_LEG": load("res://Visuals/Characters/Player/pants(Pant1_Upper_right_leg) _0001.png")
-	}
-]
-
 var pant_style_id = 0
 var pant_color : String
 
@@ -165,12 +127,12 @@ func modulate_pant(color: Color):
 
 
 func change_pant(id: int):
-	pant_style_id = id % PANT_STYLES.size()
-	%Player.get_node("%Lower_Body_Pant").texture = PANT_STYLES[pant_style_id]["LOWER_BODY"]
-	%Player.get_node("%Lower_Left_Leg_Pant").texture = PANT_STYLES[pant_style_id]["LOWER_LEFT_LEG"]
-	%Player.get_node("%Upper_Left_Leg_Pant").texture = PANT_STYLES[pant_style_id]["UPPER_LEFT_LEG"]
-	%Player.get_node("%Lower_Right_Leg_Pant").texture = PANT_STYLES[pant_style_id]["LOWER_RIGHT_LEG"]
-	%Player.get_node("%Upper_Right_Leg_Pant").texture = PANT_STYLES[pant_style_id]["UPPER_RIGHT_LEG"]
+	pant_style_id = id % CharacterVisuals.PANT_STYLES.size()
+	%Player.get_node("%Lower_Body_Pant").texture = load(CharacterVisuals.PANT_STYLES[pant_style_id]["LOWER_BODY"])
+	%Player.get_node("%Lower_Left_Leg_Pant").texture = load(CharacterVisuals.PANT_STYLES[pant_style_id]["LOWER_LEFT_LEG"])
+	%Player.get_node("%Upper_Left_Leg_Pant").texture = load(CharacterVisuals.PANT_STYLES[pant_style_id]["UPPER_LEFT_LEG"])
+	%Player.get_node("%Lower_Right_Leg_Pant").texture = load(CharacterVisuals.PANT_STYLES[pant_style_id]["LOWER_RIGHT_LEG"])
+	%Player.get_node("%Upper_Right_Leg_Pant").texture = load(CharacterVisuals.PANT_STYLES[pant_style_id]["UPPER_RIGHT_LEG"])
 
 
 func _on_pant_color_picker_color_changed(color: Color) -> void:

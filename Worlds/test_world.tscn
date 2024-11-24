@@ -21,6 +21,8 @@ ground_noise = ExtResource("2_w0y18")
 cave_noise = ExtResource("3_6pmqa")
 foliage_noise = ExtResource("4_4yfdk")
 blocks = NodePath("../Blocks")
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="Background_Layer" type="TileMapLayer" parent="WorldGen"]
 unique_name_in_owner = true

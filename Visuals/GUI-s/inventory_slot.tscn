@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://bw6egnpuh1eet"]
+
+[ext_resource type="Script" path="res://Scripts/GUI-code/inventory_slot.gd" id="1_iqjqy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8o7ip"]
+draw_center = false
+
+[node name="Slot" type="PanelContainer"]
+custom_minimum_size = Vector2(100, 100)
+theme_override_styles/panel = SubResource("StyleBoxFlat_8o7ip")
+script = ExtResource("1_iqjqy")
+
+[node name="Panel" type="Panel" parent="."]
+unique_name_in_owner = true
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Texture" type="Sprite2D" parent="MarginContainer"]
+unique_name_in_owner = true
+position = Vector2(50, 50)
+rotation = 0.523599
+scale = Vector2(2.75, 2.75)
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -282,14 +282,14 @@ metadata/_edit_group_ = true
 visible = false
 
 [node name="Lower_Left_Arm" parent="Player/Visual_Container/Visuals" index="0"]
-position = Vector2(4.20763, -8.17659)
-rotation = 1.40616
-scale = Vector2(0.999929, 0.999929)
+position = Vector2(4.52142, -8.14416)
+rotation = 1.43336
+scale = Vector2(0.999936, 0.999936)
 
 [node name="Upper_Left_Arm" parent="Player/Visual_Container/Visuals" index="1"]
-position = Vector2(3.62641, -16.155)
-rotation = 1.49808
-scale = Vector2(0.999947, 0.999947)
+position = Vector2(3.72341, -16.1039)
+rotation = 1.47087
+scale = Vector2(0.999952, 0.999952)
 
 [node name="Lower_Left_Leg" parent="Player/Visual_Container/Visuals" index="2"]
 position = Vector2(2, 6)
@@ -302,56 +302,53 @@ position = Vector2(2, 15)
 
 [node name="Mid_Body" parent="Player/Visual_Container/Visuals" index="5"]
 position = Vector2(-0.087265, -8.99924)
-rotation = -0.0404331
-scale = Vector2(0.999974, 0.999974)
+rotation = -0.0268321
+scale = Vector2(0.999978, 0.999978)
 
 [node name="Lower_Right_Leg" parent="Player/Visual_Container/Visuals" index="7"]
 position = Vector2(-3.78315, 4.68896)
-scale = Vector2(0.999999, 0.999999)
 
 [node name="Right_Foot" parent="Player/Visual_Container/Visuals" index="9"]
 position = Vector2(-5.03571, 13.6014)
+scale = Vector2(0.999995, 0.999995)
 
 [node name="Upper_Body" parent="Player/Visual_Container/Visuals" index="10"]
-position = Vector2(-0.289375, -13.995)
-rotation = -0.0404331
-scale = Vector2(0.999974, 0.999974)
+position = Vector2(-0.221405, -13.9973)
+rotation = -0.0268321
+scale = Vector2(0.999978, 0.999978)
 
 [node name="Head" parent="Player/Visual_Container/Visuals" index="11"]
-position = Vector2(-1.53105, -19.9495)
-rotation = 0.00552649
-scale = Vector2(0.999947, 0.999947)
+position = Vector2(-1.382, -19.9682)
+rotation = -0.00807446
+scale = Vector2(0.999954, 0.999954)
 
 [node name="Hair" parent="Player/Visual_Container/Visuals/Head" index="1"]
 modulate = Color(1, 1, 1, 1)
 
 [node name="Lower_Right_Arm" parent="Player/Visual_Container/Visuals" index="12"]
-position = Vector2(-6.86836, -9.22992)
-rotation = -1.5804
-scale = Vector2(0.999957, 0.999957)
+position = Vector2(-6.50368, -9.19093)
+rotation = -1.6212
+scale = Vector2(0.999963, 0.999963)
 
 [node name="Upper_Right_Arm" parent="Player/Visual_Container/Visuals" index="13"]
-position = Vector2(-4.36684, -15.8316)
-rotation = -1.25402
-scale = Vector2(0.999958, 0.999958)
+position = Vector2(-4.27354, -15.8893)
+rotation = -1.29483
+scale = Vector2(0.999964, 0.999964)
 
 [node name="Mid_Body" parent="Player/Visual_Container/Skeleton2D/Lower_Body" index="1"]
-scale = Vector2(0.999974, 0.999974)
+scale = Vector2(0.999978, 0.999978)
 
 [node name="Head" parent="Player/Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body" index="1"]
-scale = Vector2(0.999973, 0.999973)
+scale = Vector2(0.999976, 0.999976)
 
 [node name="Upper_Right_Arm" parent="Player/Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body" index="2"]
-scale = Vector2(0.999984, 0.999984)
+scale = Vector2(0.999986, 0.999986)
 
 [node name="Upper_Left_Arm" parent="Player/Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body" index="3"]
-scale = Vector2(0.999973, 0.999973)
+scale = Vector2(0.999974, 0.999974)
 
 [node name="Lower_Left_Arm" parent="Player/Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Upper_Left_Arm" index="1"]
-scale = Vector2(0.999982, 0.999982)
-
-[node name="Right_Foot" parent="Player/Visual_Container/Skeleton2D/Upper_Right_Leg/Lower_Right_Leg" index="1"]
-scale = Vector2(0.999996, 0.999996)
+scale = Vector2(0.999984, 0.999984)
 
 [node name="Hurtbox_Component" parent="Player" index="6"]
 visible = false
@@ -364,9 +361,6 @@ affected_by_gravity = false
 
 [node name="Health_Bar" parent="Player" index="9"]
 visible = false
-
-[node name="character_visuals" parent="Player" index="10"]
-script = null
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/Sidebar/MarginContainer/VBoxContainer/HBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/Sidebar/MarginContainer/VBoxContainer/HairButton" to="." method="_on_hair_button_pressed"]

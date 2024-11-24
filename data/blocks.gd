@@ -1,25 +1,26 @@
 extends Node
 class_name BLOCKS
 
-@export var BLOCK_IDS : Dictionary = {
-	"AIR": Vector2i(-1,-1),
-	"GRASS": Vector2i(0,0),
-	"GRASS_SLAB": Vector2i(1,0),
-	"DIRT": Vector2i(2,0),
-	"STONE": Vector2i(3,0),
-	"DARK_STONE": Vector2i(0,1),
-	"SAND": Vector2i(1,1),
-	"OAK_LOG": Vector2i(2,1),
-	"LEAVES": Vector2i(3,1),
-	"BIRCH_LOG": Vector2i(0,2)
-}
+var air : Block = Block.new("Air", -1, Vector2i(-1,-1))
+var grass : Block = Block.new("Grass", 0, Vector2i(0,0))
+var grass_slab : Block = Block.new("Grass Slab", 1, Vector2i(1,0))
+var dirt : Block = Block.new("Dirt", 2, Vector2i(2,0))
+var stone : Block = Block.new("Stone", 3, Vector2i(3,0))
+var dark_stone : Block = Block.new("Dark Stone", 4, Vector2i(0,1))
+var sand : Block = Block.new("Sand", 5, Vector2i(1,1))
+var oak_log : Block = Block.new("Oak Log", 6, Vector2i(2,1))
+var leaves : Block = Block.new("Leaves", 7, Vector2i(3,1))
+var birch_log : Block = Block.new("Birch Log", 8, Vector2i(0,2))
 
-
-func _get_block_atlas_coords_by_name(string: String):
-	return BLOCK_IDS[string]
-
-func _get_block_name_by_id(id: int):
-	return BLOCK_IDS.keys()[id]
-
-func _get_block_atlas_coords_by_id(id: int):
-	return BLOCK_IDS.values()[id]
+var as_array : Array[Block] = [
+	air,
+	grass,
+	grass_slab,
+	dirt,
+	stone,
+	dark_stone,
+	sand,
+	oak_log,
+	leaves,
+	birch_log
+]

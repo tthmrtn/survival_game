@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://cwhjfp5mathi3"]
+[gd_scene load_steps=36 format=3 uid="uid://cwhjfp5mathi3"]
 
 [ext_resource type="Script" path="res://Scripts/Characters/player.gd" id="1_2t5l6"]
 [ext_resource type="PackedScene" uid="uid://crxnq18i2msyo" path="res://Visuals/Characters/Player/visual_container.tscn" id="2_lbgyl"]
@@ -14,7 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://4xqhtpb1uevh" path="res://Visuals/Characters/Player/pants(Pant1_Lower_right_leg) _0001.png" id="8_in5lf"]
 [ext_resource type="Texture2D" uid="uid://dodri1m3rjvdp" path="res://Visuals/Characters/Player/pants(Pant1_Upper_right_leg) _0001.png" id="9_mcq8d"]
 [ext_resource type="PackedScene" uid="uid://bud1s1soajkjw" path="res://Components/hurtbox_component.tscn" id="17_1mou8"]
+[ext_resource type="Script" path="res://data/character_visuals.gd" id="17_r70v0"]
 [ext_resource type="PackedScene" uid="uid://cdg83kuw0dl6i" path="res://Components/health_component.tscn" id="18_ipdx3"]
+[ext_resource type="PackedScene" uid="uid://3387dkuwkteq" path="res://Visuals/GUI-s/inventory_dialog.tscn" id="18_k2iuu"]
 [ext_resource type="PackedScene" uid="uid://btew5s1ddreev" path="res://Components/velocity_component.tscn" id="19_x26ck"]
 
 [sub_resource type="Animation" id="Animation_vu3wu"]
@@ -745,14 +747,14 @@ polygon = PackedVector2Array(0, 12, 5, 12, 7, 3, 7, -34, -7, -34, -7, 3, -5, 12)
 unique_name_in_owner = true
 
 [node name="Lower_Left_Arm" parent="Visual_Container/Visuals" index="0"]
-position = Vector2(3.94302, -8.20735)
-rotation = 1.38329
-scale = Vector2(0.999943, 0.999943)
+position = Vector2(4.43736, -8.15247)
+rotation = 1.42606
+scale = Vector2(0.999915, 0.999915)
 
 [node name="Upper_Left_Arm" parent="Visual_Container/Visuals" index="1"]
-position = Vector2(3.54438, -16.1971)
-rotation = 1.52094
-scale = Vector2(0.999956, 0.999956)
+position = Vector2(3.69745, -16.1177)
+rotation = 1.47817
+scale = Vector2(0.999938, 0.999938)
 
 [node name="Upper_Left_Arm_Shirt" type="Sprite2D" parent="Visual_Container/Visuals/Upper_Left_Arm" index="0"]
 unique_name_in_owner = true
@@ -772,8 +774,8 @@ texture = ExtResource("5_xeudf")
 
 [node name="Mid_Body" parent="Visual_Container/Visuals" index="5"]
 position = Vector2(-0.0872621, -8.99924)
-rotation = -0.0518669
-scale = Vector2(0.999981, 0.999981)
+rotation = -0.0304795
+scale = Vector2(0.999971, 0.999971)
 
 [node name="Mid_Body_Shirt" type="Sprite2D" parent="Visual_Container/Visuals/Mid_Body" index="0"]
 unique_name_in_owner = true
@@ -805,9 +807,9 @@ position = Vector2(-5.03571, 13.6014)
 scale = Vector2(0.999995, 0.999995)
 
 [node name="Upper_Body" parent="Visual_Container/Visuals" index="10"]
-position = Vector2(-0.346476, -13.9924)
-rotation = -0.0518669
-scale = Vector2(0.999981, 0.999981)
+position = Vector2(-0.239631, -13.9968)
+rotation = -0.0304795
+scale = Vector2(0.999971, 0.999971)
 
 [node name="Upper_Body_Shirt" type="Sprite2D" parent="Visual_Container/Visuals/Upper_Body" index="0"]
 unique_name_in_owner = true
@@ -816,9 +818,9 @@ scale = Vector2(1.00002, 1.00002)
 texture = ExtResource("5_eidyq")
 
 [node name="Head" parent="Visual_Container/Visuals" index="11"]
-position = Vector2(-1.65617, -19.9324)
-rotation = 0.0169603
-scale = Vector2(0.999957, 0.999957)
+position = Vector2(-1.42198, -19.9633)
+rotation = -0.00442713
+scale = Vector2(0.99994, 0.99994)
 
 [node name="Pupil" type="Sprite2D" parent="Visual_Container/Visuals/Head" index="0"]
 unique_name_in_owner = true
@@ -835,14 +837,14 @@ scale = Vector2(1.00004, 1.00004)
 texture = ExtResource("3_8qoed")
 
 [node name="Lower_Right_Arm" parent="Visual_Container/Visuals" index="12"]
-position = Vector2(-7.1712, -9.2702)
-rotation = -1.5461
-scale = Vector2(0.999968, 0.999968)
+position = Vector2(-6.60189, -9.20045)
+rotation = -1.61026
+scale = Vector2(0.999952, 0.999952)
 
 [node name="Upper_Right_Arm" parent="Visual_Container/Visuals" index="13"]
-position = Vector2(-4.4447, -15.7823)
-rotation = -1.21972
-scale = Vector2(0.999969, 0.999969)
+position = Vector2(-4.2986, -15.8739)
+rotation = -1.28388
+scale = Vector2(0.999953, 0.999953)
 
 [node name="Upper_Right_Arm_Shirt" type="Sprite2D" parent="Visual_Container/Visuals/Upper_Right_Arm" index="0"]
 unique_name_in_owner = true
@@ -855,23 +857,23 @@ visible = false
 
 [node name="Mid_Body" parent="Visual_Container/Skeleton2D/Lower_Body" index="1"]
 rotation = 0.0
-scale = Vector2(0.99998, 0.99998)
+scale = Vector2(0.999971, 0.999971)
 
 [node name="Head" parent="Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body" index="1"]
 rotation = 0.0
-scale = Vector2(0.999977, 0.999977)
+scale = Vector2(0.999969, 0.999969)
 
 [node name="Upper_Right_Arm" parent="Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body" index="2"]
 rotation = -1.30551
-scale = Vector2(0.999988, 0.999988)
+scale = Vector2(0.999982, 0.999982)
 
 [node name="Upper_Left_Arm" parent="Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body" index="3"]
 rotation = 1.46957
-scale = Vector2(0.999976, 0.999976)
+scale = Vector2(0.999967, 0.999967)
 
 [node name="Lower_Left_Arm" parent="Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Upper_Left_Arm" index="1"]
 rotation = 0.0
-scale = Vector2(0.999987, 0.999987)
+scale = Vector2(0.999977, 0.999977)
 
 [node name="Lower_Right_Leg" parent="Visual_Container/Skeleton2D/Upper_Right_Leg" index="1"]
 rotation = -0.164061
@@ -937,5 +939,15 @@ offset_bottom = -38.0
 theme = SubResource("Theme_gcxly")
 value = 100.0
 show_percentage = false
+
+[node name="character_visuals" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("17_r70v0")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="InventoryDialog" parent="CanvasLayer" instance=ExtResource("18_k2iuu")]
+unique_name_in_owner = true
+visible = false
 
 [editable path="Visual_Container"]
