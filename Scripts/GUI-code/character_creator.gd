@@ -63,7 +63,7 @@ func modulate_hair(color: Color):
 
 func change_hair(id: int):
 	hair_style_id = id % CharacterVisuals.HAIR_STYLES.size()
-	%Player.get_node("%Hair").texture = load(CharacterVisuals.HAIR_STYLES[hair_style_id])
+	%Player.get_node("%Hair").texture = Global.load_resource(CharacterVisuals.HAIR_STYLES[hair_style_id])
 
 func _on_hair_color_picker_color_changed(color: Color) -> void:
 	modulate_hair(color)
@@ -93,10 +93,10 @@ func modulate_shirt(color: Color):
 
 func change_shirt(id: int):
 	shirt_style_id = id % CharacterVisuals.SHIRT_STYLES.size()
-	%Player.get_node("%Upper_Body_Shirt").texture = load(CharacterVisuals.SHIRT_STYLES[shirt_style_id]["UPPER_BODY"])
-	%Player.get_node("%Mid_Body_Shirt").texture = load(CharacterVisuals.SHIRT_STYLES[shirt_style_id]["MID_BODY"])
-	%Player.get_node("%Upper_Left_Arm_Shirt").texture = load(CharacterVisuals.SHIRT_STYLES[shirt_style_id]["UPPER_LEFT_ARM"])
-	%Player.get_node("%Upper_Right_Arm_Shirt").texture = load(CharacterVisuals.SHIRT_STYLES[shirt_style_id]["UPPER_RIGHT_ARM"])
+	%Player.get_node("%Upper_Body_Shirt").texture = Global.load_resource(CharacterVisuals.SHIRT_STYLES[shirt_style_id]["UPPER_BODY"])
+	%Player.get_node("%Mid_Body_Shirt").texture = Global.load_resource(CharacterVisuals.SHIRT_STYLES[shirt_style_id]["MID_BODY"])
+	%Player.get_node("%Upper_Left_Arm_Shirt").texture = Global.load_resource(CharacterVisuals.SHIRT_STYLES[shirt_style_id]["UPPER_LEFT_ARM"])
+	%Player.get_node("%Upper_Right_Arm_Shirt").texture = Global.load_resource(CharacterVisuals.SHIRT_STYLES[shirt_style_id]["UPPER_RIGHT_ARM"])
 
 
 func _on_shirt_color_picker_color_changed(color: Color) -> void:
@@ -128,11 +128,11 @@ func modulate_pant(color: Color):
 
 func change_pant(id: int):
 	pant_style_id = id % CharacterVisuals.PANT_STYLES.size()
-	%Player.get_node("%Lower_Body_Pant").texture = load(CharacterVisuals.PANT_STYLES[pant_style_id]["LOWER_BODY"])
-	%Player.get_node("%Lower_Left_Leg_Pant").texture = load(CharacterVisuals.PANT_STYLES[pant_style_id]["LOWER_LEFT_LEG"])
-	%Player.get_node("%Upper_Left_Leg_Pant").texture = load(CharacterVisuals.PANT_STYLES[pant_style_id]["UPPER_LEFT_LEG"])
-	%Player.get_node("%Lower_Right_Leg_Pant").texture = load(CharacterVisuals.PANT_STYLES[pant_style_id]["LOWER_RIGHT_LEG"])
-	%Player.get_node("%Upper_Right_Leg_Pant").texture = load(CharacterVisuals.PANT_STYLES[pant_style_id]["UPPER_RIGHT_LEG"])
+	%Player.get_node("%Lower_Body_Pant").texture = Global.load_resource(CharacterVisuals.PANT_STYLES[pant_style_id]["LOWER_BODY"])
+	%Player.get_node("%Lower_Left_Leg_Pant").texture = Global.load_resource(CharacterVisuals.PANT_STYLES[pant_style_id]["LOWER_LEFT_LEG"])
+	%Player.get_node("%Upper_Left_Leg_Pant").texture = Global.load_resource(CharacterVisuals.PANT_STYLES[pant_style_id]["UPPER_LEFT_LEG"])
+	%Player.get_node("%Lower_Right_Leg_Pant").texture = Global.load_resource(CharacterVisuals.PANT_STYLES[pant_style_id]["LOWER_RIGHT_LEG"])
+	%Player.get_node("%Upper_Right_Leg_Pant").texture = Global.load_resource(CharacterVisuals.PANT_STYLES[pant_style_id]["UPPER_RIGHT_LEG"])
 
 
 func _on_pant_color_picker_color_changed(color: Color) -> void:

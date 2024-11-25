@@ -732,12 +732,14 @@ bg_color = Color(0.309906, 0.707297, 7.70092e-07, 1)
 ProgressBar/styles/background = SubResource("StyleBoxFlat_7sorg")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_alm1w")
 
-[node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("velocity_component")]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("velocity_component", "health_component", "inventory")]
 collision_mask = 2
 floor_constant_speed = true
 floor_max_angle = 1.48353
 script = ExtResource("1_2t5l6")
 velocity_component = NodePath("Velocity_Component")
+health_component = NodePath("Health_Component")
+inventory = NodePath("CanvasLayer/InventoryDialog")
 metadata/_edit_lock_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
@@ -747,14 +749,14 @@ polygon = PackedVector2Array(0, 12, 5, 12, 7, 3, 7, -34, -7, -34, -7, 3, -5, 12)
 unique_name_in_owner = true
 
 [node name="Lower_Left_Arm" parent="Visual_Container/Visuals" index="0"]
-position = Vector2(4.43736, -8.15247)
-rotation = 1.42606
-scale = Vector2(0.999915, 0.999915)
+position = Vector2(4.6943, -8.12831)
+rotation = 1.4484
+scale = Vector2(0.999905, 0.999905)
 
 [node name="Upper_Left_Arm" parent="Visual_Container/Visuals" index="1"]
-position = Vector2(3.69745, -16.1177)
-rotation = 1.47817
-scale = Vector2(0.999938, 0.999938)
+position = Vector2(3.77669, -16.0749)
+rotation = 1.45583
+scale = Vector2(0.99993, 0.99993)
 
 [node name="Upper_Left_Arm_Shirt" type="Sprite2D" parent="Visual_Container/Visuals/Upper_Left_Arm" index="0"]
 unique_name_in_owner = true
@@ -774,8 +776,8 @@ texture = ExtResource("5_xeudf")
 
 [node name="Mid_Body" parent="Visual_Container/Visuals" index="5"]
 position = Vector2(-0.0872621, -8.99924)
-rotation = -0.0304795
-scale = Vector2(0.999971, 0.999971)
+rotation = -0.0193119
+scale = Vector2(0.999968, 0.999968)
 
 [node name="Mid_Body_Shirt" type="Sprite2D" parent="Visual_Container/Visuals/Mid_Body" index="0"]
 unique_name_in_owner = true
@@ -807,9 +809,9 @@ position = Vector2(-5.03571, 13.6014)
 scale = Vector2(0.999995, 0.999995)
 
 [node name="Upper_Body" parent="Visual_Container/Visuals" index="10"]
-position = Vector2(-0.239631, -13.9968)
-rotation = -0.0304795
-scale = Vector2(0.999971, 0.999971)
+position = Vector2(-0.183813, -13.9981)
+rotation = -0.0193119
+scale = Vector2(0.999968, 0.999968)
 
 [node name="Upper_Body_Shirt" type="Sprite2D" parent="Visual_Container/Visuals/Upper_Body" index="0"]
 unique_name_in_owner = true
@@ -818,9 +820,9 @@ scale = Vector2(1.00002, 1.00002)
 texture = ExtResource("5_eidyq")
 
 [node name="Head" parent="Visual_Container/Visuals" index="11"]
-position = Vector2(-1.42198, -19.9633)
-rotation = -0.00442713
-scale = Vector2(0.99994, 0.99994)
+position = Vector2(-1.29945, -19.9775)
+rotation = -0.0155946
+scale = Vector2(0.999932, 0.999932)
 
 [node name="Pupil" type="Sprite2D" parent="Visual_Container/Visuals/Head" index="0"]
 unique_name_in_owner = true
@@ -837,14 +839,14 @@ scale = Vector2(1.00004, 1.00004)
 texture = ExtResource("3_8qoed")
 
 [node name="Lower_Right_Arm" parent="Visual_Container/Visuals" index="12"]
-position = Vector2(-6.60189, -9.20045)
-rotation = -1.61026
-scale = Vector2(0.999952, 0.999952)
+position = Vector2(-6.3, -9.17365)
+rotation = -1.64376
+scale = Vector2(0.999947, 0.999947)
 
 [node name="Upper_Right_Arm" parent="Visual_Container/Visuals" index="13"]
-position = Vector2(-4.2986, -15.8739)
-rotation = -1.28388
-scale = Vector2(0.999953, 0.999953)
+position = Vector2(-4.22156, -15.9205)
+rotation = -1.31739
+scale = Vector2(0.999948, 0.999948)
 
 [node name="Upper_Right_Arm_Shirt" type="Sprite2D" parent="Visual_Container/Visuals/Upper_Right_Arm" index="0"]
 unique_name_in_owner = true
@@ -857,23 +859,23 @@ visible = false
 
 [node name="Mid_Body" parent="Visual_Container/Skeleton2D/Lower_Body" index="1"]
 rotation = 0.0
-scale = Vector2(0.999971, 0.999971)
+scale = Vector2(0.999968, 0.999968)
 
 [node name="Head" parent="Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body" index="1"]
 rotation = 0.0
-scale = Vector2(0.999969, 0.999969)
+scale = Vector2(0.999964, 0.999964)
 
 [node name="Upper_Right_Arm" parent="Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body" index="2"]
 rotation = -1.30551
-scale = Vector2(0.999982, 0.999982)
+scale = Vector2(0.999981, 0.999981)
 
 [node name="Upper_Left_Arm" parent="Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body" index="3"]
 rotation = 1.46957
-scale = Vector2(0.999967, 0.999967)
+scale = Vector2(0.999963, 0.999963)
 
 [node name="Lower_Left_Arm" parent="Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Upper_Left_Arm" index="1"]
 rotation = 0.0
-scale = Vector2(0.999977, 0.999977)
+scale = Vector2(0.999974, 0.999974)
 
 [node name="Lower_Right_Leg" parent="Visual_Container/Skeleton2D/Upper_Right_Leg" index="1"]
 rotation = -0.164061
@@ -948,6 +950,6 @@ script = ExtResource("17_r70v0")
 
 [node name="InventoryDialog" parent="CanvasLayer" instance=ExtResource("18_k2iuu")]
 unique_name_in_owner = true
-visible = false
+offset_bottom = -148.0
 
 [editable path="Visual_Container"]

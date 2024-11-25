@@ -74,6 +74,9 @@ func dict_to_worlds():
 		worlds.push_back(temp)
 	return worlds
 
+func save_loaded_world_data():
+	print(worlds_to_dict()["xpvbrnwt"])
+
 func delete_world(uid: String):
 	data["worlds"].erase(uid)
 	WORLDS = dict_to_worlds()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bby5fdbixrjdd"]
+[gd_scene load_steps=10 format=3 uid="uid://bby5fdbixrjdd"]
 
 [ext_resource type="PackedScene" uid="uid://cwhjfp5mathi3" path="res://Objects/Characters/Player.tscn" id="1_hy1j4"]
 [ext_resource type="Script" path="res://Scripts/Components/world.gd" id="1_yfmfk"]
@@ -9,18 +9,16 @@
 [ext_resource type="TileSet" uid="uid://cjx0wr5alti0q" path="res://Visuals/TileSets/test_world.tres" id="4_40jkx"]
 [ext_resource type="Script" path="res://Scripts/world_gen.gd" id="4_bndg4"]
 [ext_resource type="Script" path="res://Scripts/terrain_mod.gd" id="5_voypv"]
-[ext_resource type="Script" path="res://data/blocks.gd" id="6_7826e"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_yfmfk")
 
-[node name="WorldGen" type="Node2D" parent="." node_paths=PackedStringArray("blocks")]
+[node name="WorldGen" type="Node2D" parent="."]
 unique_name_in_owner = true
 script = ExtResource("4_bndg4")
 ground_noise = ExtResource("2_w0y18")
 cave_noise = ExtResource("3_6pmqa")
 foliage_noise = ExtResource("4_4yfdk")
-blocks = NodePath("../Blocks")
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -37,7 +35,7 @@ tile_set = ExtResource("4_40jkx")
 
 [node name="Foreground_Layer" type="TileMapLayer" parent="WorldGen"]
 unique_name_in_owner = true
-z_index = 2
+z_index = 20
 tile_set = ExtResource("4_40jkx")
 collision_enabled = false
 
@@ -54,12 +52,8 @@ script = ExtResource("2_wosy1")
 target = NodePath("../Player")
 smoothing = true
 
-[node name="Terrain_Mod" type="Node2D" parent="." node_paths=PackedStringArray("background_layer", "main_layer", "foreground_layer", "blocks")]
+[node name="Terrain_Mod" type="Node2D" parent="." node_paths=PackedStringArray("background_layer", "main_layer", "foreground_layer")]
 script = ExtResource("5_voypv")
 background_layer = NodePath("../WorldGen/Background_Layer")
 main_layer = NodePath("../WorldGen/Main_Layer")
 foreground_layer = NodePath("../WorldGen/Foreground_Layer")
-blocks = NodePath("../Blocks")
-
-[node name="Blocks" type="Node" parent="."]
-script = ExtResource("6_7826e")

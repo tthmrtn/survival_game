@@ -24,3 +24,20 @@ var as_array : Array[Block] = [
 	leaves,
 	birch_log
 ]
+
+func get_block_by_atlas_coords(coords: Vector2i) -> Block:
+	for block in as_array:
+		if block.atlas_position == coords:
+			return block
+	return null
+
+func get_block_by_name(name: String) -> Block:
+	for block in as_array:
+		if block.name == name:
+			return block
+	return null
+
+func get_block_by_id(id: int) -> Block:
+	if id < -1 or id > as_array.size()-2:
+		return null
+	return as_array[id+1]

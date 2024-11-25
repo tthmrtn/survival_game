@@ -1,12 +1,15 @@
 extends CharacterBody2D
 
 @export var velocity_component : Velocity_Component
+@export var health_component : Health_Component
+@export var inventory : Inventory
 
 enum MOVEMENT {
 	WALKING = 30,
 	RUNNING = 180,
 	STANDING = 0
 }
+
 
 var can_move : bool = true
 
@@ -61,6 +64,12 @@ func _input(event: InputEvent) -> void:
 				%AnimationTree["parameters/walk_or_run/blend_amount"]= 0
 			elif velocity_component.get_speed_stage() == "RUNNING":
 				%AnimationTree["parameters/walk_or_run/blend_amount"]= 1
+		
+		Global.loaded_world.player_data.apply_payload(
+			{"health": health_component.health,
+			"position": {"x": position.x, "y": position.y},
+			"inventory": inventory.inventory}
+			)
 
 
 func _physics_process(delta: float) -> void:
@@ -73,29 +82,29 @@ func _physics_process(delta: float) -> void:
 
 func load_character():
 	#HAIR 
-	%Player.get_node("%Hair").texture = load(CharacterVisuals.HAIR_STYLES[Global.data["character"]["HAIR_STYLE"]])
-	%Player.get_node("%Hair").modulate = Global.data["character"]["HAIR_COLOR"]
+	self.get_node("%Hair").texture = load(CharacterVisuals.HAIR_STYLES[Global.data["character"]["HAIR_STYLE"]])
+	self.get_node("%Hair").modulate = Global.data["character"]["HAIR_COLOR"]
 	
 	#SHIRT
-	%Player.get_node("%Upper_Body_Shirt").texture = Global.load_resource(CharacterVisuals.SHIRT_STYLES[Global.data["character"]["SHIRT_STYLE"]]["UPPER_BODY"])
-	%Player.get_node("%Mid_Body_Shirt").texture = Global.load_resource(CharacterVisuals.SHIRT_STYLES[Global.data["character"]["SHIRT_STYLE"]]["MID_BODY"])
-	%Player.get_node("%Upper_Left_Arm_Shirt").texture = Global.load_resource(CharacterVisuals.SHIRT_STYLES[Global.data["character"]["SHIRT_STYLE"]]["UPPER_LEFT_ARM"])
-	%Player.get_node("%Upper_Right_Arm_Shirt").texture = Global.load_resource(CharacterVisuals.SHIRT_STYLES[Global.data["character"]["SHIRT_STYLE"]]["UPPER_RIGHT_ARM"])
+	self.get_node("%Upper_Body_Shirt").texture = Global.load_resource(CharacterVisuals.SHIRT_STYLES[Global.data["character"]["SHIRT_STYLE"]]["UPPER_BODY"])
+	self.get_node("%Mid_Body_Shirt").texture = Global.load_resource(CharacterVisuals.SHIRT_STYLES[Global.data["character"]["SHIRT_STYLE"]]["MID_BODY"])
+	self.get_node("%Upper_Left_Arm_Shirt").texture = Global.load_resource(CharacterVisuals.SHIRT_STYLES[Global.data["character"]["SHIRT_STYLE"]]["UPPER_LEFT_ARM"])
+	self.get_node("%Upper_Right_Arm_Shirt").texture = Global.load_resource(CharacterVisuals.SHIRT_STYLES[Global.data["character"]["SHIRT_STYLE"]]["UPPER_RIGHT_ARM"])
 	
-	%Player.get_node("%Upper_Body_Shirt").modulate = Global.data["character"]["SHIRT_COLOR"]
-	%Player.get_node("%Mid_Body_Shirt").modulate = Global.data["character"]["SHIRT_COLOR"]
-	%Player.get_node("%Upper_Left_Arm_Shirt").modulate = Global.data["character"]["SHIRT_COLOR"]
-	%Player.get_node("%Upper_Right_Arm_Shirt").modulate = Global.data["character"]["SHIRT_COLOR"]
+	self.get_node("%Upper_Body_Shirt").modulate = Global.data["character"]["SHIRT_COLOR"]
+	self.get_node("%Mid_Body_Shirt").modulate = Global.data["character"]["SHIRT_COLOR"]
+	self.get_node("%Upper_Left_Arm_Shirt").modulate = Global.data["character"]["SHIRT_COLOR"]
+	self.get_node("%Upper_Right_Arm_Shirt").modulate = Global.data["character"]["SHIRT_COLOR"]
 	
 	#PANTS
-	%Player.get_node("%Lower_Body_Pant").texture = Global.load_resource(CharacterVisuals.PANT_STYLES[Global.data["character"]["PANT_STYLE"]]["LOWER_BODY"])
-	%Player.get_node("%Lower_Left_Leg_Pant").texture = Global.load_resource(CharacterVisuals.PANT_STYLES[Global.data["character"]["PANT_STYLE"]]["LOWER_LEFT_LEG"])
-	%Player.get_node("%Upper_Left_Leg_Pant").texture = Global.load_resource(CharacterVisuals.PANT_STYLES[Global.data["character"]["PANT_STYLE"]]["UPPER_LEFT_LEG"])
-	%Player.get_node("%Lower_Right_Leg_Pant").texture = Global.load_resource(CharacterVisuals.PANT_STYLES[Global.data["character"]["PANT_STYLE"]]["LOWER_RIGHT_LEG"])
-	%Player.get_node("%Upper_Right_Leg_Pant").texture = Global.load_resource(CharacterVisuals.PANT_STYLES[Global.data["character"]["PANT_STYLE"]]["UPPER_RIGHT_LEG"])
+	self.get_node("%Lower_Body_Pant").texture = Global.load_resource(CharacterVisuals.PANT_STYLES[Global.data["character"]["PANT_STYLE"]]["LOWER_BODY"])
+	self.get_node("%Lower_Left_Leg_Pant").texture = Global.load_resource(CharacterVisuals.PANT_STYLES[Global.data["character"]["PANT_STYLE"]]["LOWER_LEFT_LEG"])
+	self.get_node("%Upper_Left_Leg_Pant").texture = Global.load_resource(CharacterVisuals.PANT_STYLES[Global.data["character"]["PANT_STYLE"]]["UPPER_LEFT_LEG"])
+	self.get_node("%Lower_Right_Leg_Pant").texture = Global.load_resource(CharacterVisuals.PANT_STYLES[Global.data["character"]["PANT_STYLE"]]["LOWER_RIGHT_LEG"])
+	self.get_node("%Upper_Right_Leg_Pant").texture = Global.load_resource(CharacterVisuals.PANT_STYLES[Global.data["character"]["PANT_STYLE"]]["UPPER_RIGHT_LEG"])
 	
-	%Player.get_node("%Lower_Body_Pant").modulate = Global.data["character"]["PANT_COLOR"]
-	%Player.get_node("%Lower_Left_Leg_Pant").modulate = Global.data["character"]["PANT_COLOR"]
-	%Player.get_node("%Upper_Left_Leg_Pant").modulate = Global.data["character"]["PANT_COLOR"]
-	%Player.get_node("%Lower_Right_Leg_Pant").modulate = Global.data["character"]["PANT_COLOR"]
-	%Player.get_node("%Upper_Right_Leg_Pant").modulate = Global.data["character"]["PANT_COLOR"]
+	self.get_node("%Lower_Body_Pant").modulate = Global.data["character"]["PANT_COLOR"]
+	self.get_node("%Lower_Left_Leg_Pant").modulate = Global.data["character"]["PANT_COLOR"]
+	self.get_node("%Upper_Left_Leg_Pant").modulate = Global.data["character"]["PANT_COLOR"]
+	self.get_node("%Lower_Right_Leg_Pant").modulate = Global.data["character"]["PANT_COLOR"]
+	self.get_node("%Upper_Right_Leg_Pant").modulate = Global.data["character"]["PANT_COLOR"]

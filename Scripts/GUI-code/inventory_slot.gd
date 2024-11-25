@@ -1,9 +1,9 @@
 extends PanelContainer
-class_name Slot
+class_name InventorySlot
 
-signal clicked(slot: Slot)
-signal click_released(slot: Slot)
-signal right_clicked(slot: Slot, equipped: bool)
+signal clicked(slot: InventorySlot)
+signal click_released(slot: InventorySlot)
+signal right_clicked(slot: InventorySlot, equipped: bool)
 
 var mouse_in : bool = false
 var item : Item
@@ -26,6 +26,13 @@ func _input(event: InputEvent) -> void:
 			if Input.is_action_just_pressed("right_click"):
 				right_clicked.emit(self, inventory_position == Vector2i(-1,-1))
 
+func update_amount():
+	%Amount.text = var_to_str(item.amount)
+
+func remove():
+	item = null
+	%Amount.text = ""
+	%Texture.texture = null
 
 func _on_mouse_entered() -> void:
 	self.mouse_in = true

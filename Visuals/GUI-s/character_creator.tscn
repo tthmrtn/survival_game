@@ -282,14 +282,14 @@ metadata/_edit_group_ = true
 visible = false
 
 [node name="Lower_Left_Arm" parent="Player/Visual_Container/Visuals" index="0"]
-position = Vector2(4.20763, -8.17659)
-rotation = 1.40616
-scale = Vector2(0.999929, 0.999929)
+position = Vector2(4.7077, -8.12705)
+rotation = 1.44956
+scale = Vector2(0.999927, 0.999927)
 
 [node name="Upper_Left_Arm" parent="Player/Visual_Container/Visuals" index="1"]
-position = Vector2(3.62641, -16.155)
-rotation = 1.49808
-scale = Vector2(0.999947, 0.999947)
+position = Vector2(3.78083, -16.0727)
+rotation = 1.45467
+scale = Vector2(0.999945, 0.999945)
 
 [node name="Lower_Left_Leg" parent="Player/Visual_Container/Visuals" index="2"]
 position = Vector2(2, 6)
@@ -302,56 +302,53 @@ position = Vector2(2, 15)
 
 [node name="Mid_Body" parent="Player/Visual_Container/Visuals" index="5"]
 position = Vector2(-0.087265, -8.99924)
-rotation = -0.0404331
+rotation = -0.0187297
 scale = Vector2(0.999974, 0.999974)
 
 [node name="Lower_Right_Leg" parent="Player/Visual_Container/Visuals" index="7"]
 position = Vector2(-3.78315, 4.68896)
-scale = Vector2(0.999999, 0.999999)
 
 [node name="Right_Foot" parent="Player/Visual_Container/Visuals" index="9"]
 position = Vector2(-5.03571, 13.6014)
+scale = Vector2(0.999995, 0.999995)
 
 [node name="Upper_Body" parent="Player/Visual_Container/Visuals" index="10"]
-position = Vector2(-0.289375, -13.995)
-rotation = -0.0404331
+position = Vector2(-0.180908, -13.9982)
+rotation = -0.0187297
 scale = Vector2(0.999974, 0.999974)
 
 [node name="Head" parent="Player/Visual_Container/Visuals" index="11"]
-position = Vector2(-1.53105, -19.9495)
-rotation = 0.00552649
+position = Vector2(-1.29308, -19.9783)
+rotation = -0.0161769
 scale = Vector2(0.999947, 0.999947)
 
 [node name="Hair" parent="Player/Visual_Container/Visuals/Head" index="1"]
 modulate = Color(1, 1, 1, 1)
 
 [node name="Lower_Right_Arm" parent="Player/Visual_Container/Visuals" index="12"]
-position = Vector2(-6.86836, -9.22992)
-rotation = -1.5804
+position = Vector2(-6.28423, -9.17241)
+rotation = -1.64551
 scale = Vector2(0.999957, 0.999957)
 
 [node name="Upper_Right_Arm" parent="Player/Visual_Container/Visuals" index="13"]
-position = Vector2(-4.36684, -15.8316)
-rotation = -1.25402
+position = Vector2(-4.21755, -15.9229)
+rotation = -1.31913
 scale = Vector2(0.999958, 0.999958)
 
 [node name="Mid_Body" parent="Player/Visual_Container/Skeleton2D/Lower_Body" index="1"]
-scale = Vector2(0.999974, 0.999974)
+scale = Vector2(0.999972, 0.999972)
 
 [node name="Head" parent="Player/Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body" index="1"]
-scale = Vector2(0.999973, 0.999973)
+scale = Vector2(0.999971, 0.999971)
 
 [node name="Upper_Right_Arm" parent="Player/Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body" index="2"]
 scale = Vector2(0.999984, 0.999984)
 
 [node name="Upper_Left_Arm" parent="Player/Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body" index="3"]
-scale = Vector2(0.999973, 0.999973)
+scale = Vector2(0.999971, 0.999971)
 
 [node name="Lower_Left_Arm" parent="Player/Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Upper_Left_Arm" index="1"]
-scale = Vector2(0.999982, 0.999982)
-
-[node name="Right_Foot" parent="Player/Visual_Container/Skeleton2D/Upper_Right_Leg/Lower_Right_Leg" index="1"]
-scale = Vector2(0.999996, 0.999996)
+scale = Vector2(0.999981, 0.999981)
 
 [node name="Hurtbox_Component" parent="Player" index="6"]
 visible = false
@@ -367,6 +364,9 @@ visible = false
 
 [node name="character_visuals" parent="Player" index="10"]
 script = null
+
+[node name="CanvasLayer" parent="Player" index="11"]
+visible = false
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/Sidebar/MarginContainer/VBoxContainer/HBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/Sidebar/MarginContainer/VBoxContainer/HairButton" to="." method="_on_hair_button_pressed"]

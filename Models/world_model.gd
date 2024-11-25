@@ -22,3 +22,7 @@ func export_payload():
 	payload["modified_blocks"] = self.modified_blocks
 	
 	return payload
+
+func update_world_data():
+	Global.data["worlds"][uid] = self.export_payload()
+	Global.save()
