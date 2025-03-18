@@ -4,17 +4,7 @@ extends CharacterBody2D
 @export var health_component : Health_Component
 @export var inventory : Inventory
 
-enum MOVEMENT {
-	WALKING = 30,
-	RUNNING = 180,
-	STANDING = 0
-}
-
-
 var can_move : bool = true
-
-var current_speed : float = MOVEMENT.WALKING
-@onready var current_movement_speed : int = MOVEMENT.WALKING
 
 const JUMP_VELOCITY = 200.0
 
@@ -30,7 +20,7 @@ func _ready() -> void:
 	load_character()
 
 func _input(event: InputEvent) -> void:
-	if !can_move:
+	if !can_move || !Global.loaded_world:
 		return
 	
 	if event is InputEventKey:
@@ -65,11 +55,8 @@ func _input(event: InputEvent) -> void:
 			elif velocity_component.get_speed_stage() == "RUNNING":
 				%AnimationTree["parameters/walk_or_run/blend_amount"]= 1
 		
-		Global.loaded_world.player_data.apply_payload(
-			{"health": health_component.health,
-			"position": {"x": position.x, "y": position.y},
-			"inventory": inventory.inventory}
-			)
+		Global.data["worlds"][Global.loaded_world.uid]["player_data"]["position"] = {"x": position.x, "y": position.y}
+		Global.save()
 
 
 func _physics_process(delta: float) -> void:
@@ -81,6 +68,8 @@ func _physics_process(delta: float) -> void:
 		visible_left = right_hand_node
 
 func load_character():
+	if !Global.data.has("character"):
+		return
 	#HAIR 
 	self.get_node("%Hair").texture = load(CharacterVisuals.HAIR_STYLES[Global.data["character"]["HAIR_STYLE"]])
 	self.get_node("%Hair").modulate = Global.data["character"]["HAIR_COLOR"]

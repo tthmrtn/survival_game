@@ -44,7 +44,10 @@ func _process(delta: float) -> void:
 		current_speed = move_toward(current_speed, SPEED_STAGES[current_speed_stage], transition_speed)
 	else:
 		current_speed = SPEED_STAGES[current_speed_stage]
+	
 	body.velocity.x = current_direction.x * current_speed
+	if not affected_by_gravity:
+		body.velocity.y = current_direction.y * current_speed
 	if affected_by_gravity:
 		if not body.is_on_floor():
 			body.velocity += body.get_gravity() * delta

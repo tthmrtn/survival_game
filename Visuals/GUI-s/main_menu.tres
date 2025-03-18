@@ -1,0 +1,20 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://bcyw1gta702yl"]
+
+[ext_resource type="StyleBox" uid="uid://dm8ajjsijyjdf" path="res://Visuals/GUI-s/button_default.tres" id="1_g7muk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_40gqf"]
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.37, 0.37, 0.37, 1)
+border_width_left = 5
+border_width_right = 5
+border_color = Color(0.8, 0.8, 0.8, 0.713726)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[resource]
+Button/styles/hover = SubResource("StyleBoxFlat_40gqf")
+Button/styles/normal = ExtResource("1_g7muk")

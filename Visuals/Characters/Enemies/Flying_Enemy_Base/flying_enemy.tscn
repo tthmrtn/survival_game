@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://pb32h8fuotc8"]
+
+[ext_resource type="Script" path="res://Visuals/Characters/Enemies/Flying_Enemy_Base/flying_enemy.gd" id="1_1c0so"]
+[ext_resource type="PackedScene" uid="uid://btew5s1ddreev" path="res://Components/velocity_component.tscn" id="2_7oeta"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a2ti2"]
+bg_color = Color(1, 0.466667, 0, 1)
+
+[node name="FlyingEnemy" type="CharacterBody2D" node_paths=PackedStringArray("velocity_component")]
+collision_mask = 2
+floor_constant_speed = true
+floor_max_angle = 1.55334
+script = ExtResource("1_1c0so")
+velocity_component = NodePath("Velocity_Component")
+
+[node name="Velocity_Component" parent="." node_paths=PackedStringArray("body") instance=ExtResource("2_7oeta")]
+body = NodePath("..")
+SPEED_STAGES = {
+"STANDING": 0,
+"WALKING": 40
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, -16)
+polygon = PackedVector2Array(7, 23, 7, 9, -7, 9, -7, 23)
+
+[node name="Visual" type="Node2D" parent="."]
+unique_name_in_owner = true
+metadata/_edit_group_ = true
+
+[node name="Panel" type="Panel" parent="Visual"]
+offset_left = -7.0
+offset_top = -7.0
+offset_right = 7.0
+offset_bottom = 7.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_a2ti2")
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true

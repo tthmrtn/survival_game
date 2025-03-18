@@ -10,10 +10,13 @@ var item : Item
 var inventory_position : Vector2i
 
 func add_item(item: Item):
-	self.item = item
 	if (item):
+		self.item = item.copy()
+		self.item.amount_updated.connect(update_amount)
 		%Texture.texture = item.texture
+		update_amount()
 	else:
+		self.item = null
 		%Texture.texture = null
 
 func _input(event: InputEvent) -> void:
@@ -27,7 +30,10 @@ func _input(event: InputEvent) -> void:
 				right_clicked.emit(self, inventory_position == Vector2i(-1,-1))
 
 func update_amount():
-	%Amount.text = var_to_str(item.amount)
+	if (item):
+		%Amount.text = var_to_str(item.amount)
+	else:
+		%Amount.text = ""
 
 func remove():
 	item = null

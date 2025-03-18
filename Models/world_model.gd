@@ -3,8 +3,9 @@ class_name WorldData
 var name: String = ""
 var uid: String = ""
 var seed: int = 0
+
 var player_data: PlayerData = PlayerData.new()
-var modified_blocks: Array = []
+var modified_blocks: Dictionary = {}
 
 func apply_payload(data):
 	self.name = data["name"]

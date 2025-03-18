@@ -4,14 +4,18 @@ extends Node2D
 @export var cave_noise : FastNoiseLite
 @export var foliage_noise : FastNoiseLite
 
-
 @export var world_width : int = 500
 @export var world_amp : int = 60
 @export var bottom_of_world : int = 300
 
 var seed : int = -1
+var layers: Array[TileMapLayer]
 
 func _ready() -> void:
+	layers.push_back(%Background_Layer)
+	layers.push_back(%Main_Layer)
+	layers.push_back(%Foreground_Layer)
+	
 	ground_noise.seed = Global.loaded_world.seed
 	cave_noise.seed = Global.loaded_world.seed
 	foliage_noise.seed = Global.loaded_world.seed
@@ -67,7 +71,7 @@ func _ready() -> void:
 	
 	#LOAD PREVIOUS DATA
 	_load_world()
-
+	
 func _is_solid(x,y):
 	if (y > bottom_of_world - 10):
 		return true
@@ -91,4 +95,12 @@ func _generate_tree(x,y,height):
 	%Main_Layer.set_cell(Vector2i(x,y+1),0,Blocks.grass.atlas_position)
 
 func _load_world():
-	print(Global.loaded_world.modified_blocks)
+	var world = Global.loaded_world
+	for key: String in world.modified_blocks.keys():
+		var x = str_to_var(key.split(",")[0])
+		var y = str_to_var(key.split(",")[1])
+		for i in range(3):
+			if (world.modified_blocks[key][i]):
+				layers[i].set_cell(Vector2i(x,y),0,Blocks.get_block_by_name(world.modified_blocks[key][i]).atlas_position)
+	
+	%Player.position = world.player_data.player_position

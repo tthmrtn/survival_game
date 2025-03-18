@@ -60,6 +60,7 @@ size_flags_vertical = 4
 text = "  <  "
 
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer/Sidebar/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 24
@@ -68,18 +69,22 @@ CREATOR"
 horizontal_alignment = 1
 
 [node name="HairButton" type="Button" parent="MarginContainer/HBoxContainer/Sidebar/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Hair"
 
 [node name="ShirtButton" type="Button" parent="MarginContainer/HBoxContainer/Sidebar/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Shirt"
 
 [node name="PantsButton" type="Button" parent="MarginContainer/HBoxContainer/Sidebar/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Pants"
 
 [node name="SaveButton" type="Button" parent="MarginContainer/HBoxContainer/Sidebar/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 10
 text = "Save
@@ -105,7 +110,8 @@ theme_override_constants/margin_bottom = 10
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/HairOptions/MarginContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/HairOptions/MarginContainer/VBoxContainer"]
+[node name="HairOptionsLabel" type="Label" parent="MarginContainer/HBoxContainer/HairOptions/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "HAIR OPTIONS"
@@ -133,7 +139,8 @@ theme_override_constants/separation = 25
 layout_mode = 2
 text = "  <  "
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/HairOptions/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="HairStyleLabel" type="Label" parent="MarginContainer/HBoxContainer/HairOptions/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Style"
@@ -164,7 +171,8 @@ theme_override_constants/margin_bottom = 10
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/ShirtOptions/MarginContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/ShirtOptions/MarginContainer/VBoxContainer"]
+[node name="ShirtOptionsLabel" type="Label" parent="MarginContainer/HBoxContainer/ShirtOptions/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "SHIRT OPTIONS"
@@ -192,7 +200,8 @@ theme_override_constants/separation = 25
 layout_mode = 2
 text = "  <  "
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/ShirtOptions/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="ShirtStyleLabel" type="Label" parent="MarginContainer/HBoxContainer/ShirtOptions/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Style"
@@ -223,7 +232,8 @@ theme_override_constants/margin_bottom = 10
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/PantsOptions/MarginContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/PantsOptions/MarginContainer/VBoxContainer"]
+[node name="PantsOptiionsLabel" type="Label" parent="MarginContainer/HBoxContainer/PantsOptions/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "PANTS OPTIONS"
@@ -251,7 +261,8 @@ theme_override_constants/separation = 25
 layout_mode = 2
 text = "  <  "
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/PantsOptions/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="PantsStyleLabel" type="Label" parent="MarginContainer/HBoxContainer/PantsOptions/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Style"
@@ -282,73 +293,57 @@ metadata/_edit_group_ = true
 visible = false
 
 [node name="Lower_Left_Arm" parent="Player/Visual_Container/Visuals" index="0"]
-position = Vector2(4.7077, -8.12705)
-rotation = 1.44956
-scale = Vector2(0.999927, 0.999927)
+position = Vector2(4.65784, -8.1315)
+rotation = 1.44523
+scale = Vector2(0.999913, 0.999913)
 
 [node name="Upper_Left_Arm" parent="Player/Visual_Container/Visuals" index="1"]
-position = Vector2(3.78083, -16.0727)
-rotation = 1.45467
-scale = Vector2(0.999945, 0.999945)
-
-[node name="Lower_Left_Leg" parent="Player/Visual_Container/Visuals" index="2"]
-position = Vector2(2, 6)
-
-[node name="Upper_Left_Leg" parent="Player/Visual_Container/Visuals" index="3"]
-position = Vector2(2, -5)
-
-[node name="Left_Foot" parent="Player/Visual_Container/Visuals" index="4"]
-position = Vector2(2, 15)
+position = Vector2(3.76545, -16.081)
+rotation = 1.45901
+scale = Vector2(0.999934, 0.999934)
 
 [node name="Mid_Body" parent="Player/Visual_Container/Visuals" index="5"]
 position = Vector2(-0.087265, -8.99924)
-rotation = -0.0187297
-scale = Vector2(0.999974, 0.999974)
+rotation = -0.0208982
+scale = Vector2(0.999964, 0.999964)
 
 [node name="Lower_Right_Leg" parent="Player/Visual_Container/Visuals" index="7"]
 position = Vector2(-3.78315, 4.68896)
 
-[node name="Right_Foot" parent="Player/Visual_Container/Visuals" index="9"]
-position = Vector2(-5.03571, 13.6014)
-scale = Vector2(0.999995, 0.999995)
-
 [node name="Upper_Body" parent="Player/Visual_Container/Visuals" index="10"]
-position = Vector2(-0.180908, -13.9982)
-rotation = -0.0187297
-scale = Vector2(0.999974, 0.999974)
+position = Vector2(-0.191742, -13.998)
+rotation = -0.0208982
+scale = Vector2(0.999964, 0.999964)
 
 [node name="Head" parent="Player/Visual_Container/Visuals" index="11"]
-position = Vector2(-1.29308, -19.9783)
-rotation = -0.0161769
-scale = Vector2(0.999947, 0.999947)
-
-[node name="Hair" parent="Player/Visual_Container/Visuals/Head" index="1"]
-modulate = Color(1, 1, 1, 1)
+position = Vector2(-1.31686, -19.9755)
+rotation = -0.0140084
+scale = Vector2(0.999927, 0.999927)
 
 [node name="Lower_Right_Arm" parent="Player/Visual_Container/Visuals" index="12"]
-position = Vector2(-6.28423, -9.17241)
-rotation = -1.64551
-scale = Vector2(0.999957, 0.999957)
+position = Vector2(-6.34305, -9.17702)
+rotation = -1.63901
+scale = Vector2(0.999947, 0.999947)
 
 [node name="Upper_Right_Arm" parent="Player/Visual_Container/Visuals" index="13"]
-position = Vector2(-4.21755, -15.9229)
-rotation = -1.31913
-scale = Vector2(0.999958, 0.999958)
+position = Vector2(-4.23252, -15.9139)
+rotation = -1.31263
+scale = Vector2(0.999948, 0.999948)
 
 [node name="Mid_Body" parent="Player/Visual_Container/Skeleton2D/Lower_Body" index="1"]
-scale = Vector2(0.999972, 0.999972)
+scale = Vector2(0.999963, 0.999963)
 
 [node name="Head" parent="Player/Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body" index="1"]
-scale = Vector2(0.999971, 0.999971)
+scale = Vector2(0.999963, 0.999963)
 
 [node name="Upper_Right_Arm" parent="Player/Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body" index="2"]
 scale = Vector2(0.999984, 0.999984)
 
 [node name="Upper_Left_Arm" parent="Player/Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body" index="3"]
-scale = Vector2(0.999971, 0.999971)
+scale = Vector2(0.99997, 0.99997)
 
 [node name="Lower_Left_Arm" parent="Player/Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Upper_Left_Arm" index="1"]
-scale = Vector2(0.999981, 0.999981)
+scale = Vector2(0.999978, 0.999978)
 
 [node name="Hurtbox_Component" parent="Player" index="6"]
 visible = false

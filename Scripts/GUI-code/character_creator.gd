@@ -10,7 +10,6 @@ extends Control
 func load_save():
 	if Global.data.has("character"):
 		var gdata = Global.data["character"]
-		print(gdata)
 		hair_color = gdata["HAIR_COLOR"]
 		hair_style_id = gdata["HAIR_STYLE"]
 		shirt_color = gdata["SHIRT_COLOR"]
@@ -29,6 +28,8 @@ func _ready() -> void:
 	%PantColorPicker.color = Color(pant_color)
 	modulate_pant(Color(pant_color))
 	change_pant(pant_style_id)
+	
+	update_lang()
 
 func changeOptionsDialog(ref):
 	for dialog in options_list:
@@ -164,5 +165,17 @@ func _on_save_button_pressed() -> void:
 		"PANT_STYLE": pant_style_id,
 		"PANT_COLOR": pant_color
 	}
-	print(data)
 	Global.save_character(data)
+
+func update_lang():
+	%Label.text = Lang.LANG[Global.lang]["character_creator"]["character_creator"]
+	%HairStyleLabel.text = Lang.LANG[Global.lang]["character_creator"]["style"]
+	%PantsStyleLabel.text = Lang.LANG[Global.lang]["character_creator"]["style"]
+	%ShirtStyleLabel.text = Lang.LANG[Global.lang]["character_creator"]["style"]
+	%HairOptionsLabel.text = Lang.LANG[Global.lang]["character_creator"]["hair_options"]
+	%ShirtOptionsLabel.text = Lang.LANG[Global.lang]["character_creator"]["shirt_options"]
+	%PantsOptiionsLabel.text = Lang.LANG[Global.lang]["character_creator"]["pants_options"]
+	%HairButton.text = Lang.LANG[Global.lang]["character_creator"]["hair"]
+	%PantsButton.text = Lang.LANG[Global.lang]["character_creator"]["pants"]
+	%ShirtButton.text = Lang.LANG[Global.lang]["character_creator"]["shirt"]
+	%SaveButton.text = Lang.LANG[Global.lang]["save"]

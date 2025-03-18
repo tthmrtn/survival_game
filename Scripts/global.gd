@@ -13,9 +13,12 @@ func _ready() -> void:
 				var world = WorldData.new()
 				world.apply_payload(data["worlds"][uid])
 				WORLDS.push_back(world)
+		if data.has("lang"):
+			lang = data["lang"]
 
 var json = JSON.new()
 var path = "user://data.json"
+var lang = "en"
 
 var data = {}
 
@@ -66,16 +69,13 @@ func worlds_to_dict():
 				dict[world.uid] = world.export_payload()
 	return dict
 
-func dict_to_worlds():
+func dict_to_worlds() -> Array[WorldData]:
 	var worlds: Array[WorldData]
 	for world in data["worlds"]:
 		var temp = WorldData.new()
 		temp.apply_payload(data["worlds"][world])
 		worlds.push_back(temp)
 	return worlds
-
-func save_loaded_world_data():
-	print(worlds_to_dict()["xpvbrnwt"])
 
 func delete_world(uid: String):
 	data["worlds"].erase(uid)
@@ -88,3 +88,33 @@ func load_resource(path):
 		return load(path)
 	else:
 		return null
+
+func update_world(coords: Vector2i, layer: TileMapLayer, cell_type: Block):
+	var worlds = worlds_to_dict()
+	
+	var key: String = var_to_str(coords.x)+","+var_to_str(coords.y)
+	var id = 0
+	if layer.name == "Main_Layer":
+		id = 1
+	elif layer.name == "Foreground_Layer":
+		id = 2
+	
+	if worlds[loaded_world.uid]["modified_blocks"].has(key):
+		worlds[loaded_world.uid]["modified_blocks"][key][id] = cell_type.name
+	else:
+		worlds[loaded_world.uid]["modified_blocks"][key] = [null, null, null]
+		worlds[loaded_world.uid]["modified_blocks"][key][id] = cell_type.name
+	
+	WORLDS = dict_to_worlds()
+	save()
+	update_worlds_array.emit()
+
+func update_world_player_data(player_data):
+	var worlds = worlds_to_dict()
+	
+	data["worlds"][loaded_world.uid]["player_data"] = player_data
+	#print("--------1")
+	#print(data["worlds"][loaded_world.uid]["player_data"])
+	WORLDS = dict_to_worlds()
+	#print("--------2")
+	save()

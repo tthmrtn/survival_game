@@ -5,6 +5,12 @@ extends Control
 func _ready() -> void:
 	Global.update_worlds_array.connect(fetch_worlds)
 	fetch_worlds()
+	update_lang()
+
+func update_lang():
+	%MenuButton.text = Lang.LANG[Global.lang]["back_to_menu"]
+	%NewWorldButton.text = Lang.LANG[Global.lang]["worlds"]["create_new_world"]
+	%Label.text = Lang.LANG[Global.lang]["worlds"]["worlds"]
 
 func _on_new_world_button_pressed() -> void:
 	Global.create_new_world(%WorldName.text if %WorldName.text else "New world")

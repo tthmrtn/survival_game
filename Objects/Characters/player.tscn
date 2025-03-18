@@ -749,14 +749,14 @@ polygon = PackedVector2Array(0, 12, 5, 12, 7, 3, 7, -34, -7, -34, -7, 3, -5, 12)
 unique_name_in_owner = true
 
 [node name="Lower_Left_Arm" parent="Visual_Container/Visuals" index="0"]
-position = Vector2(4.6943, -8.12831)
-rotation = 1.4484
-scale = Vector2(0.999905, 0.999905)
+position = Vector2(4.02859, -8.1972)
+rotation = 1.39069
+scale = Vector2(0.999886, 0.999886)
 
 [node name="Upper_Left_Arm" parent="Visual_Container/Visuals" index="1"]
-position = Vector2(3.77669, -16.0749)
-rotation = 1.45583
-scale = Vector2(0.99993, 0.99993)
+position = Vector2(3.5709, -16.1834)
+rotation = 1.51355
+scale = Vector2(0.999918, 0.999918)
 
 [node name="Upper_Left_Arm_Shirt" type="Sprite2D" parent="Visual_Container/Visuals/Upper_Left_Arm" index="0"]
 unique_name_in_owner = true
@@ -776,8 +776,8 @@ texture = ExtResource("5_xeudf")
 
 [node name="Mid_Body" parent="Visual_Container/Visuals" index="5"]
 position = Vector2(-0.0872621, -8.99924)
-rotation = -0.0193119
-scale = Vector2(0.999968, 0.999968)
+rotation = -0.0481692
+scale = Vector2(0.99996, 0.99996)
 
 [node name="Mid_Body_Shirt" type="Sprite2D" parent="Visual_Container/Visuals/Mid_Body" index="0"]
 unique_name_in_owner = true
@@ -809,9 +809,9 @@ position = Vector2(-5.03571, 13.6014)
 scale = Vector2(0.999995, 0.999995)
 
 [node name="Upper_Body" parent="Visual_Container/Visuals" index="10"]
-position = Vector2(-0.183813, -13.9981)
-rotation = -0.0193119
-scale = Vector2(0.999968, 0.999968)
+position = Vector2(-0.328005, -13.9932)
+rotation = -0.0481692
+scale = Vector2(0.99996, 0.99996)
 
 [node name="Upper_Body_Shirt" type="Sprite2D" parent="Visual_Container/Visuals/Upper_Body" index="0"]
 unique_name_in_owner = true
@@ -820,9 +820,9 @@ scale = Vector2(1.00002, 1.00002)
 texture = ExtResource("5_eidyq")
 
 [node name="Head" parent="Visual_Container/Visuals" index="11"]
-position = Vector2(-1.29945, -19.9775)
-rotation = -0.0155946
-scale = Vector2(0.999932, 0.999932)
+position = Vector2(-1.6157, -19.9379)
+rotation = 0.0132626
+scale = Vector2(0.999918, 0.999918)
 
 [node name="Pupil" type="Sprite2D" parent="Visual_Container/Visuals/Head" index="0"]
 unique_name_in_owner = true
@@ -833,20 +833,19 @@ texture = ExtResource("3_4qflj")
 
 [node name="Hair" type="Sprite2D" parent="Visual_Container/Visuals/Head" index="1"]
 unique_name_in_owner = true
-modulate = Color(0.447059, 0.239216, 0, 1)
 position = Vector2(5, 18)
 scale = Vector2(1.00004, 1.00004)
 texture = ExtResource("3_8qoed")
 
 [node name="Lower_Right_Arm" parent="Visual_Container/Visuals" index="12"]
-position = Vector2(-6.3, -9.17365)
-rotation = -1.64376
-scale = Vector2(0.999947, 0.999947)
+position = Vector2(-7.07351, -9.25648)
+rotation = -1.55719
+scale = Vector2(0.999936, 0.999936)
 
 [node name="Upper_Right_Arm" parent="Visual_Container/Visuals" index="13"]
-position = Vector2(-4.22156, -15.9205)
-rotation = -1.31739
-scale = Vector2(0.999948, 0.999948)
+position = Vector2(-4.4195, -15.7982)
+rotation = -1.23081
+scale = Vector2(0.999937, 0.999937)
 
 [node name="Upper_Right_Arm_Shirt" type="Sprite2D" parent="Visual_Container/Visuals/Upper_Right_Arm" index="0"]
 unique_name_in_owner = true
@@ -859,23 +858,23 @@ visible = false
 
 [node name="Mid_Body" parent="Visual_Container/Skeleton2D/Lower_Body" index="1"]
 rotation = 0.0
-scale = Vector2(0.999968, 0.999968)
+scale = Vector2(0.99996, 0.99996)
 
 [node name="Head" parent="Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body" index="1"]
 rotation = 0.0
-scale = Vector2(0.999964, 0.999964)
+scale = Vector2(0.999958, 0.999958)
 
 [node name="Upper_Right_Arm" parent="Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body" index="2"]
 rotation = -1.30551
-scale = Vector2(0.999981, 0.999981)
+scale = Vector2(0.999977, 0.999977)
 
 [node name="Upper_Left_Arm" parent="Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body" index="3"]
 rotation = 1.46957
-scale = Vector2(0.999963, 0.999963)
+scale = Vector2(0.999958, 0.999958)
 
 [node name="Lower_Left_Arm" parent="Visual_Container/Skeleton2D/Lower_Body/Mid_Body/Upper_Body/Upper_Left_Arm" index="1"]
 rotation = 0.0
-scale = Vector2(0.999974, 0.999974)
+scale = Vector2(0.999968, 0.999968)
 
 [node name="Lower_Right_Leg" parent="Visual_Container/Skeleton2D/Upper_Right_Leg" index="1"]
 rotation = -0.164061
@@ -918,6 +917,8 @@ parameters/walk_or_run/blend_amount = 0.0
 health_component = NodePath("../Health_Component")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hurtbox_Component"]
+position = Vector2(0, -0.0701065)
+scale = Vector2(1, 1.00272)
 polygon = PackedVector2Array(7, 12, 7, -34, -7, -34, -7, 12)
 
 [node name="Health_Component" parent="." node_paths=PackedStringArray("health_bar") instance=ExtResource("18_ipdx3")]
@@ -950,6 +951,7 @@ script = ExtResource("17_r70v0")
 
 [node name="InventoryDialog" parent="CanvasLayer" instance=ExtResource("18_k2iuu")]
 unique_name_in_owner = true
+visible = false
 offset_bottom = -148.0
 
 [editable path="Visual_Container"]

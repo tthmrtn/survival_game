@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://djaf86d0mkqql"]
+
+[ext_resource type="Script" path="res://Visuals/Characters/Enemies/Ground_Enemy_Base/ground_enemy_base.gd" id="1_kkhcf"]
+[ext_resource type="PackedScene" uid="uid://btew5s1ddreev" path="res://Components/velocity_component.tscn" id="2_pwg7a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l4txp"]
+bg_color = Color(1, 0.245676, 0.100837, 1)
+
+[node name="GroundEnemy" type="CharacterBody2D" node_paths=PackedStringArray("velocity_component")]
+collision_mask = 2
+floor_constant_speed = true
+floor_max_angle = 1.55334
+script = ExtResource("1_kkhcf")
+velocity_component = NodePath("Velocity_Component")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = -7.0
+offset_top = -37.0
+offset_right = 7.0
+offset_bottom = 5.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_l4txp")
+metadata/_edit_use_anchors_ = true
+
+[node name="Velocity_Component" parent="." node_paths=PackedStringArray("body") instance=ExtResource("2_pwg7a")]
+body = NodePath("..")
+SPEED_STAGES = {
+"STANDING": 0,
+"WALKING": 40
+}
+affected_by_gravity = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, -16)
+polygon = PackedVector2Array(0, 21, 5, 21, 7, 12, 7, -21, -7, -21, -7, 12, -5, 21)
