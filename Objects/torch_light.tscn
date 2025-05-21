@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxwpxgbyh00ej"]
+
+[ext_resource type="Texture2D" uid="uid://b273erjeps2lc" path="res://Visuals/Other/pointlight.png" id="1_3cf6u"]
+
+[node name="TorchLight" type="Node2D"]
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, -8)
+scale = Vector2(1.875, 1.875)
+color = Color(1, 1, 0.690196, 1)
+texture = ExtResource("1_3cf6u")

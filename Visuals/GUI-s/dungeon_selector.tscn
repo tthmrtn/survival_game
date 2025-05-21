@@ -1,0 +1,77 @@
+[gd_scene load_steps=4 format=3 uid="uid://8yo2pm7cihn6"]
+
+[ext_resource type="Theme" uid="uid://bcyw1gta702yl" path="res://Visuals/GUI-s/main_menu.tres" id="1_owtpg"]
+[ext_resource type="Script" uid="uid://chf86f8s1iu6c" path="res://Scripts/GUI-code/dungeon_selector.gd" id="2_lt4so"]
+[ext_resource type="Texture2D" uid="uid://3urf313bb182" path="res://Visuals/Images/Menu.png" id="3_i0qc2"]
+
+[node name="DungeonSelector" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_owtpg")
+script = ExtResource("2_lt4so")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 17
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "DUNGEONS"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 20.0
+
+[node name="DungeonList" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 15
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_constants/separation = 13
+
+[node name="NewDungeonButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Create new dungeon"
+
+[node name="DungeonName" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MenuButton" type="Button" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Back to menu"
+
+[node name="Menu" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.839216)
+z_index = -4
+position = Vector2(600, 311)
+texture = ExtResource("3_i0qc2")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/NewDungeonButton" to="." method="_on_new_dungeon_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]

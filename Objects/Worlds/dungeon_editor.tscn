@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkpy7205kurio"]
+
+[ext_resource type="TileSet" uid="uid://cjx0wr5alti0q" path="res://Visuals/TileSets/test_world.tres" id="1_4dsjg"]
+[ext_resource type="Script" uid="uid://cr7347oqu61jo" path="res://Scripts/dungeon_editor.gd" id="1_ecrm5"]
+[ext_resource type="PackedScene" uid="uid://brf4rprta6wcy" path="res://Components/terrain_mod.tscn" id="2_ecrm5"]
+[ext_resource type="Script" uid="uid://bj5xcxaq0nry7" path="res://Scripts/free_camera.gd" id="4_tf2b6"]
+
+[node name="DungeonEditor" type="Node2D"]
+script = ExtResource("1_ecrm5")
+
+[node name="Background_Layer" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+modulate = Color(0.691357, 0.691357, 0.691357, 1)
+tile_set = ExtResource("1_4dsjg")
+collision_enabled = false
+
+[node name="Main_Layer" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+z_index = 1
+tile_set = ExtResource("1_4dsjg")
+
+[node name="Foreground_Layer" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+z_index = 20
+tile_set = ExtResource("1_4dsjg")
+collision_enabled = false
+
+[node name="Terrain_Mod" parent="." node_paths=PackedStringArray("background_layer", "main_layer", "foreground_layer") instance=ExtResource("2_ecrm5")]
+unique_name_in_owner = true
+background_layer = NodePath("../Background_Layer")
+main_layer = NodePath("../Main_Layer")
+foreground_layer = NodePath("../Foreground_Layer")
+
+[node name="FreeCamera" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+position_smoothing_enabled = true
+script = ExtResource("4_tf2b6")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1054.0
+offset_bottom = 14.0
+size_flags_horizontal = 10
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.775063, 0.775063, 0.775063, 1)
+
+[node name="Torches" type="Node2D" parent="."]
+unique_name_in_owner = true

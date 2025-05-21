@@ -1,0 +1,108 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmkpirkih8y10"]
+
+[ext_resource type="Script" uid="uid://sd7onfm2e0hp" path="res://Scripts/GUI-code/craft_preview.gd" id="1_4joq4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qewp2"]
+bg_color = Color(0.168627, 0.168627, 0.168627, 0.776471)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.247059, 0.247059, 0.247059, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s1rq2"]
+bg_color = Color(0.168627, 0.168627, 0.168627, 0.776471)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.2484, 0.2484, 0.2484, 1)
+
+[node name="CraftPreview" type="Control"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_4joq4")
+
+[node name="Panel" type="Panel" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qewp2")
+metadata/_edit_lock_ = true
+
+[node name="Result" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(50, 21)
+rotation = 1.5708
+scale = Vector2(2.75, 2.75)
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 60.0
+offset_right = -60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s1rq2")
+
+[node name="Panel3" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 60.0
+offset_top = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s1rq2")
+
+[node name="Item1" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(80, 80)
+rotation = 0.523599
+
+[node name="Node2D" type="Node2D" parent="Item1"]
+rotation = -0.523599
+
+[node name="Item1Amount" type="Label" parent="Item1/Node2D"]
+unique_name_in_owner = true
+offset_left = -21.0
+offset_right = 19.0
+offset_bottom = 23.0
+horizontal_alignment = 2
+
+[node name="Item2" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(20, 80)
+rotation = 0.523599
+
+[node name="Node2D" type="Node2D" parent="Item2"]
+rotation = -0.523599
+
+[node name="Item2Amount" type="Label" parent="Item2/Node2D"]
+unique_name_in_owner = true
+offset_left = -21.0
+offset_right = 19.0
+offset_bottom = 23.0
+horizontal_alignment = 2
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -8,6 +8,7 @@ enum DAY_PHASES {
 }
 
 func _ready() -> void:
+	%DayNightCycle.pause()
 	pass
 
 func _input(event: InputEvent) -> void:
@@ -18,12 +19,19 @@ func _physics_process(delta: float) -> void:
 	tick += 1
 	if tick%60 == 0:
 		display_time(tick)
+	
+	var day_progress = (tick/ (test_length * 60.0))
+	if (day_progress >= 1.0):
+		day_progress -= 1.0
+	
+	#print( day_progress )
+	%DayNightCycle.seek(day_progress, true)
 
 var day_length = 86400
 
 var day_night_ratio = 2/3
 
-var test_length = 9.0
+var test_length = 30.0
 
 var day_phase : DAY_PHASES
 
@@ -36,9 +44,12 @@ func display_time(tick):
 	var day_progress = (secnum / test_length)
 	day_progress -= int(day_progress)
 	
-	var darkness = 0.0 if day_progress < 2.0/3.0 else 0.6
-	day_phase = DAY_PHASES.DAY if day_progress < 2.0/3.0 else DAY_PHASES.NIGHT
 	
-	%CanvasModulate.color = Color("#ffffff").darkened(darkness)
+	#//print(day_progress)
 	
-	%Time.text = hour.substr(hour.length()-2, -1)+":"+minute.substr(minute.length()-2, -1)
+	#var darkness = 0.0 if day_progress < 2.0/3.0 else 0.6
+	#day_phase = DAY_PHASES.DAY if day_progress < 2.0/3.0 else DAY_PHASES.NIGHT
+	#
+	#%CanvasModulate.color = Color("#ffffff").darkened(darkness)
+	#
+	#%Time.text = hour.substr(hour.length()-2, -1)+":"+minute.substr(minute.length()-2, -1)

@@ -4,10 +4,12 @@ class_name InventorySlot
 signal clicked(slot: InventorySlot)
 signal click_released(slot: InventorySlot)
 signal right_clicked(slot: InventorySlot, equipped: bool)
+signal hovering(is_hovering: bool)
 
 var mouse_in : bool = false
 var item : Item
 var inventory_position : Vector2i
+var visible_amount : bool = true
 
 func add_item(item: Item):
 	if (item):
@@ -30,21 +32,25 @@ func _input(event: InputEvent) -> void:
 				right_clicked.emit(self, inventory_position == Vector2i(-1,-1))
 
 func update_amount():
-	if (item):
+	if inventory_position == Vector2i(-1,-1) || !self.get_node("%Amount"): return
+	if (item && visible_amount):
 		%Amount.text = var_to_str(item.amount)
 	else:
 		%Amount.text = ""
 
 func remove():
 	item = null
-	%Amount.text = ""
+	if self.get_node("%Amount"):
+		%Amount.text = ""
 	%Texture.texture = null
 
 func _on_mouse_entered() -> void:
 	self.mouse_in = true
-	%Panel.modulate = "#ffffff"
+	%Panel.modulate = "#ffffff55"
+	hovering.emit(true)
 
 
 func _on_mouse_exited() -> void:
 	self.mouse_in = false
-	%Panel.modulate = "#000000"
+	%Panel.modulate = "#7777779e"
+	hovering.emit(false)

@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsrn83mwi8ii6"]
+
+[ext_resource type="Script" uid="uid://djwpk8hsk4pax" path="res://Scripts/mob_spawner.gd" id="1_t7or4"]
+
+[node name="MobSpawner" type="Node2D"]
+script = ExtResource("1_t7or4")
+can_passive_mobs_spawn = false
+
+[node name="PassiveMobs" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="AggressiveMobs" type="Node2D" parent="."]
+unique_name_in_owner = true

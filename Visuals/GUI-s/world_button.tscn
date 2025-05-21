@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b7mmo1i52gpsf"]
 
-[ext_resource type="Script" path="res://Scripts/GUI-code/world_button.gd" id="1_wclov"]
+[ext_resource type="Script" uid="uid://b2a6g0ms7xnwn" path="res://Scripts/GUI-code/world_button.gd" id="1_wclov"]
 
 [node name="WorldButton" type="HBoxContainer"]
 theme_override_constants/separation = 10

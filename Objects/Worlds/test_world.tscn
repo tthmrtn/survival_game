@@ -1,0 +1,350 @@
+[gd_scene load_steps=20 format=3 uid="uid://bby5fdbixrjdd"]
+
+[ext_resource type="PackedScene" uid="uid://cwhjfp5mathi3" path="res://Objects/Characters/player.tscn" id="1_hy1j4"]
+[ext_resource type="Script" uid="uid://dxo8v5y6ndwq4" path="res://Scripts/Components/world.gd" id="1_yfmfk"]
+[ext_resource type="FastNoiseLite" uid="uid://6urw3hoiokr1" path="res://Visuals/Noises/ground_noise.tres" id="2_w0y18"]
+[ext_resource type="Script" uid="uid://qi8emhhug3td" path="res://Scripts/player_camera.gd" id="2_wosy1"]
+[ext_resource type="FastNoiseLite" uid="uid://dv6e2e1o60wra" path="res://Objects/Worlds/cave_noise.tres" id="3_6pmqa"]
+[ext_resource type="FastNoiseLite" uid="uid://bmcmlvgcuvnek" path="res://Objects/Worlds/foliage_noise.tres" id="4_4yfdk"]
+[ext_resource type="TileSet" uid="uid://cjx0wr5alti0q" path="res://Visuals/TileSets/test_world.tres" id="4_40jkx"]
+[ext_resource type="Script" uid="uid://bvu75p7lstho6" path="res://Scripts/world_gen.gd" id="4_bndg4"]
+[ext_resource type="Texture2D" uid="uid://c10i0f14kp28k" path="res://Visuals/Other/moon.png" id="8_uex4y"]
+[ext_resource type="Texture2D" uid="uid://71pn6xwomphn" path="res://Visuals/Other/sun.png" id="9_qbd5x"]
+[ext_resource type="PackedScene" uid="uid://brf4rprta6wcy" path="res://Components/terrain_mod.tscn" id="11_xycio"]
+[ext_resource type="PackedScene" uid="uid://d1labbsejmmkq" path="res://Visuals/Particles/breaking_particle.tscn" id="12_x6bu8"]
+[ext_resource type="PackedScene" uid="uid://dsrn83mwi8ii6" path="res://Objects/mob_spawner.tscn" id="13_lslo3"]
+[ext_resource type="PackedScene" uid="uid://b63m8t0c3rdq" path="res://Objects/Characters/Pig.tscn" id="14_xycio"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_xycio"]
+frequency = 0.0032
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uxeqv"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Animation" id="Animation_xycio"]
+resource_name = "IGDayNightCycle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SkyBox:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.103918, 0.3, 0.5, 0.6, 0.67, 0.7, 0.9, 0.931464, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.572633, 0.497536, 0.420728, 1), Color(0.388513, 0.705182, 0.80754, 1), Color(0.502012, 0.790927, 0.887308, 1), Color(0.388513, 0.705182, 0.80754, 1), Color(0.572633, 0.497536, 0.420728, 1), Color(0.685157, 0.370634, 0.18433, 1), Color(0.0884288, 0.100492, 0.201825, 1), Color(0.0884288, 0.100492, 0.201825, 1), Color(0.685157, 0.370634, 0.18433, 1), Color(0.572633, 0.497536, 0.420728, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player/DayNightElements/Sun:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -1.5708, -3.14159, -6.28319]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Player/DayNightElements/Moon:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6, 0.666667, 0.933333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 300), Vector2(0, 300), Vector2(0, -300), Vector2(0, -300), Vector2(0, 300)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Player/DayNightElements/CPUParticles2D:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Player/DayNightElements/CPUParticles2D:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.602915, 0.666667, 0.933333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Player/DayNightElements/Sun:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 100), Vector2(0, 100)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("MobSpawner:can_aggressive_mobs_spawn")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.664275),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("MobSpawner:can_passive_mobs_spawn")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.602885),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_jslgl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SkyBox:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player/DayNightElements/Sun:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(300, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Player/DayNightElements/Sun:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Player/DayNightElements/Moon:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 300)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Player/DayNightElements/CPUParticles2D:emitting")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Player/DayNightElements/CPUParticles2D:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("MobSpawner:can_aggressive_mobs_spawn")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("MobSpawner:can_passive_mobs_spawn")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_whrxm"]
+_data = {
+&"IGDayNightCycle": SubResource("Animation_xycio"),
+&"RESET": SubResource("Animation_jslgl")
+}
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_yfmfk")
+
+[node name="WorldGen" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("4_bndg4")
+ground_noise = ExtResource("2_w0y18")
+cave_noise = ExtResource("3_6pmqa")
+foliage_noise = ExtResource("4_4yfdk")
+biome_noise = SubResource("FastNoiseLite_xycio")
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Background_Layer" type="TileMapLayer" parent="WorldGen"]
+unique_name_in_owner = true
+modulate = Color(0.691357, 0.691357, 0.691357, 1)
+tile_set = ExtResource("4_40jkx")
+collision_enabled = false
+
+[node name="Main_Layer" type="TileMapLayer" parent="WorldGen"]
+unique_name_in_owner = true
+z_index = 1
+tile_set = ExtResource("4_40jkx")
+
+[node name="Foreground_Layer" type="TileMapLayer" parent="WorldGen"]
+unique_name_in_owner = true
+z_index = 20
+tile_set = ExtResource("4_40jkx")
+collision_enabled = false
+
+[node name="Player" parent="." instance=ExtResource("1_hy1j4")]
+unique_name_in_owner = true
+z_index = 2
+position = Vector2(0, -12)
+
+[node name="DayNightElements" type="Node2D" parent="Player"]
+z_index = -998
+position = Vector2(0, 12)
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Player/DayNightElements"]
+position = Vector2(0, -150)
+amount = 500
+lifetime = 7.0
+emission_shape = 3
+emission_rect_extents = Vector2(600, 400)
+direction = Vector2(0, 0)
+gravity = Vector2(0, 0)
+
+[node name="Moon" type="Sprite2D" parent="Player/DayNightElements"]
+position = Vector2(0, 300)
+scale = Vector2(6.09375, 6.09375)
+texture = ExtResource("8_uex4y")
+
+[node name="Sun" type="Sprite2D" parent="Player/DayNightElements"]
+position = Vector2(300, 0)
+scale = Vector2(5.6875, 5.6875)
+texture = ExtResource("9_qbd5x")
+offset = Vector2(80, 0)
+
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("target")]
+offset = Vector2(0, -32)
+zoom = Vector2(3, 3)
+position_smoothing_speed = 2.0
+script = ExtResource("2_wosy1")
+target = NodePath("../Player")
+smoothing = true
+
+[node name="Terrain_Mod" parent="." node_paths=PackedStringArray("background_layer", "main_layer", "foreground_layer") instance=ExtResource("11_xycio")]
+background_layer = NodePath("../WorldGen/Background_Layer")
+main_layer = NodePath("../WorldGen/Main_Layer")
+foreground_layer = NodePath("../WorldGen/Foreground_Layer")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+unique_name_in_owner = true
+
+[node name="SkyBox" type="Panel" parent="."]
+unique_name_in_owner = true
+z_index = -999
+offset_left = -123550.0
+offset_top = -70561.0
+offset_right = 292369.0
+offset_bottom = 106318.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_styles/panel = SubResource("StyleBoxFlat_uxeqv")
+metadata/_edit_lock_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Time" type="Label" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_right = 40.0
+offset_bottom = 23.0
+size_flags_horizontal = 0
+text = "00:00"
+
+[node name="Particles" type="Node2D" parent="."]
+z_index = 999
+
+[node name="BreakingParticle" parent="Particles" instance=ExtResource("12_x6bu8")]
+unique_name_in_owner = true
+emitting = false
+scale_amount_min = 1.1
+scale_amount_max = 2.2
+
+[node name="DayNightCycle" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_whrxm")
+}
+autoplay = "IGDayNightCycle"
+speed_scale = 0.05
+
+[node name="MobSpawner" parent="." instance=ExtResource("13_lslo3")]
+can_passive_mobs_spawn = true
+
+[node name="Pig" parent="." instance=ExtResource("14_xycio")]
+z_index = 9
+position = Vector2(104, -48)
+
+[node name="Torches" type="Node2D" parent="."]
+unique_name_in_owner = true

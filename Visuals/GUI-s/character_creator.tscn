@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dl2foxp1oq76s"]
 
-[ext_resource type="PackedScene" uid="uid://cwhjfp5mathi3" path="res://Objects/Characters/Player.tscn" id="1_p76s8"]
-[ext_resource type="Script" path="res://Scripts/GUI-code/character_creator.gd" id="1_t1pqn"]
+[ext_resource type="PackedScene" uid="uid://cwhjfp5mathi3" path="res://Objects/Characters/player.tscn" id="1_p76s8"]
+[ext_resource type="Script" uid="uid://uumaxurggjr0" path="res://Scripts/GUI-code/character_creator.gd" id="1_t1pqn"]
 
 [node name="Character_Creator" type="Control"]
 layout_mode = 3

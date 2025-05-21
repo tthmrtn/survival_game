@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://i3yri6j7tevs"]
+[gd_scene load_steps=4 format=3 uid="uid://i3yri6j7tevs"]
 
 [ext_resource type="Theme" uid="uid://bcyw1gta702yl" path="res://Visuals/GUI-s/main_menu.tres" id="1_krdvl"]
-[ext_resource type="Script" path="res://Scripts/GUI-code/main_menu.gd" id="1_oj8pa"]
+[ext_resource type="Script" uid="uid://d11i75umpxb4n" path="res://Scripts/GUI-code/main_menu.gd" id="1_oj8pa"]
+[ext_resource type="Texture2D" uid="uid://3urf313bb182" path="res://Visuals/Images/Menu.png" id="3_gskec"]
 
 [node name="Main_Menu" type="Control"]
 layout_mode = 3
@@ -39,6 +40,12 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Character Creator"
 
+[node name="Dungeon_Creator_Button" type="Button" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Dungeon Creator
+"
+
 [node name="Lang_Button" type="Button" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
@@ -50,7 +57,15 @@ layout_mode = 2
 size_flags_vertical = 10
 text = "EXIT"
 
+[node name="Menu" type="Sprite2D" parent="MarginContainer"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.839216)
+z_index = -4
+position = Vector2(600, 311)
+texture = ExtResource("3_gskec")
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play_Button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Character_Creator_Button" to="." method="_on_character_creator_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Dungeon_Creator_Button" to="." method="_on_dungeon_creator_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Lang_Button" to="." method="_on_lang_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Exit_Button" to="." method="_on_exit_button_pressed"]

@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://3387dkuwkteq"]
+[gd_scene load_steps=4 format=3 uid="uid://3387dkuwkteq"]
 
-[ext_resource type="Script" path="res://Scripts/GUI-code/inventory_dialog.gd" id="1_7l3bv"]
+[ext_resource type="Script" uid="uid://ddmvggmd1eujb" path="res://Scripts/GUI-code/inventory_dialog.gd" id="1_7l3bv"]
 [ext_resource type="PackedScene" uid="uid://bw6egnpuh1eet" path="res://Visuals/GUI-s/inventory_slot.tscn" id="2_5vwjt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3s7c4"]
+bg_color = Color(0.332881, 0.332881, 0.332881, 1)
 
 [node name="InventoryDialog" type="Control"]
 layout_mode = 3
@@ -27,6 +30,7 @@ size_flags_vertical = 4
 
 [node name="Panel" type="Panel" parent="MarginContainer2/MarginContainer"]
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3s7c4")
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer2/MarginContainer"]
 layout_mode = 2
@@ -52,20 +56,46 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_override_constants/separation = 18
 
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer2/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_top = 50
+
+[node name="Equippable_R" type="GridContainer" parent="MarginContainer2/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Right_Hand" parent="MarginContainer2/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer/Equippable_R" instance=ExtResource("2_5vwjt")]
+layout_mode = 2
+
 [node name="Equippable" type="GridContainer" parent="MarginContainer2/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Slot" parent="MarginContainer2/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer2/Equippable" instance=ExtResource("2_5vwjt")]
+[node name="Helmet" parent="MarginContainer2/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer2/Equippable" instance=ExtResource("2_5vwjt")]
+unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Slot2" parent="MarginContainer2/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer2/Equippable" instance=ExtResource("2_5vwjt")]
+[node name="Chestplate" parent="MarginContainer2/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer2/Equippable" instance=ExtResource("2_5vwjt")]
+unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Slot3" parent="MarginContainer2/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer2/Equippable" instance=ExtResource("2_5vwjt")]
+[node name="Pants" parent="MarginContainer2/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer2/Equippable" instance=ExtResource("2_5vwjt")]
+unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Slot4" parent="MarginContainer2/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer2/Equippable" instance=ExtResource("2_5vwjt")]
+[node name="Shoe" parent="MarginContainer2/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer2/Equippable" instance=ExtResource("2_5vwjt")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer2/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_top = 50
+
+[node name="Equippable_L" type="GridContainer" parent="MarginContainer2/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Left_Hand" parent="MarginContainer2/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer2/Equippable_L" instance=ExtResource("2_5vwjt")]
 layout_mode = 2
 
 [node name="GridContainer" type="GridContainer" parent="MarginContainer2/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer2"]

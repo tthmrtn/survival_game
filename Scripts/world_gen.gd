@@ -3,6 +3,7 @@ extends Node2D
 @export var ground_noise : FastNoiseLite
 @export var cave_noise : FastNoiseLite
 @export var foliage_noise : FastNoiseLite
+@export var biome_noise : FastNoiseLite
 
 @export var world_width : int = 500
 @export var world_amp : int = 60
@@ -16,9 +17,14 @@ func _ready() -> void:
 	layers.push_back(%Main_Layer)
 	layers.push_back(%Foreground_Layer)
 	
-	ground_noise.seed = Global.loaded_world.seed
-	cave_noise.seed = Global.loaded_world.seed
-	foliage_noise.seed = Global.loaded_world.seed
+	if Global.loaded_world && Global.loaded_world.seed:
+		self.seed = Global.loaded_world.seed
+	else:
+		self.seed = randi()
+	
+	ground_noise.seed = self.seed
+	cave_noise.seed = self.seed
+	foliage_noise.seed = self.seed
 	
 	for x in range(-world_width,world_width):
 		var ground_level = floori(ground_noise.get_noise_1d(x) * world_amp)
@@ -29,32 +35,62 @@ func _ready() -> void:
 			if (y <= ground_level + 5):
 				if ((!_is_solid(x,y-1) || y == ground_level) && _is_solid(x,y)):
 					if ((_is_solid(x-1,y) && (ground_level_after > y || !_is_solid(x-1,y)) )|| (_is_solid(x+1,y) && (ground_level_before > y || !_is_solid(x-1,y)))):
-						%Main_Layer.set_cell(Vector2i(x,y),0,Blocks.grass_slab.atlas_position)
+						if biome_noise.get_noise_1d(x) >= 0:
+							%Main_Layer.set_cell(Vector2i(x,y),0,Blocks.grass_slab.atlas_position)
+						else:
+							%Main_Layer.set_cell(Vector2i(x,y),0,Blocks.sand.atlas_position)
 					else:
-						%Main_Layer.set_cell(Vector2i(x,y),0,Blocks.grass.atlas_position)
-						
+						if biome_noise.get_noise_1d(x) >= 0:
+							%Main_Layer.set_cell(Vector2i(x,y),0,Blocks.grass.atlas_position)
+						else:
+							%Main_Layer.set_cell(Vector2i(x,y),0,Blocks.sand.atlas_position)
 				elif(_is_solid(x,y)):
-					%Main_Layer.set_cell(Vector2i(x,y),0,Blocks.dirt.atlas_position)
+					if biome_noise.get_noise_1d(x) >= 0:
+						%Main_Layer.set_cell(Vector2i(x,y),0,Blocks.dirt.atlas_position)
+					else:
+						%Main_Layer.set_cell(Vector2i(x,y),0,Blocks.sand.atlas_position)
 			elif (y > ground_level + 5 && y < bottom_of_world - 100):
 				if (_is_solid(x,y)):
-					%Main_Layer.set_cell(Vector2i(x,y),0,Blocks.stone.atlas_position)
+					var place: Block
+					if foliage_noise.get_noise_2d(x, y) > .7:
+						place = Blocks.iron_ore
+					else:
+						place = Blocks.stone
+					
+					%Main_Layer.set_cell(Vector2i(x,y),0,place.atlas_position)
 			else:
 				if (_is_solid(x,y)):
 					%Main_Layer.set_cell(Vector2i(x,y),0,Blocks.dark_stone.atlas_position)
 	
 	#GENERATE BACKGROUND LAYER
 	for x in range(-world_width,world_width):
+		print(biome_noise.get_noise_1d(x))
 		var ground_level = floori(ground_noise.get_noise_1d(x) * world_amp)
 		var ground_level_before = floori(ground_noise.get_noise_1d(x - 1) * world_amp)
 		var ground_level_after = floori(ground_noise.get_noise_1d(x + 1) * world_amp)
 		if ground_level < ground_level_after || ground_level < ground_level_before:
-			%Background_Layer.set_cell(Vector2i(x,ground_level),0,Blocks.grass_slab.atlas_position)
+			if biome_noise.get_noise_1d(x) >= 0:
+				%Background_Layer.set_cell(Vector2i(x,ground_level),0,Blocks.grass_slab.atlas_position)
+			else :
+				%Background_Layer.set_cell(Vector2i(x,ground_level),0,Blocks.sand.atlas_position)
 		else:
-			%Background_Layer.set_cell(Vector2i(x,ground_level),0,Blocks.grass.atlas_position)
+			if biome_noise.get_noise_1d(x) >= 0:
+				%Background_Layer.set_cell(Vector2i(x,ground_level),0,Blocks.grass.atlas_position)
+			else:
+				%Background_Layer.set_cell(Vector2i(x,ground_level),0,Blocks.sand.atlas_position)
 		for y in range(1,5):
-			%Background_Layer.set_cell(Vector2i(x,ground_level+y),0,Blocks.dirt.atlas_position)
+			if biome_noise.get_noise_1d(x) >= 0:
+				%Background_Layer.set_cell(Vector2i(x,ground_level+y),0,Blocks.dirt.atlas_position)
+			else:
+				%Background_Layer.set_cell(Vector2i(x,ground_level+y),0,Blocks.sand.atlas_position)
 		for y in range(ground_level + 5,bottom_of_world-100):
-			%Background_Layer.set_cell(Vector2i(x,y),0,Blocks.stone.atlas_position)
+			var place: Block
+			if foliage_noise.get_noise_2d(x, y) > .7:
+				place = Blocks.iron_ore
+			else:
+				place = Blocks.stone
+			
+			%Background_Layer.set_cell(Vector2i(x,y),0,place.atlas_position)
 		for y in range(bottom_of_world-100,bottom_of_world):
 			%Background_Layer.set_cell(Vector2i(x,y),0,Blocks.dark_stone.atlas_position)
 			
@@ -95,6 +131,9 @@ func _generate_tree(x,y,height):
 	%Main_Layer.set_cell(Vector2i(x,y+1),0,Blocks.grass.atlas_position)
 
 func _load_world():
+	if !Global.loaded_world:
+		return
+	
 	var world = Global.loaded_world
 	for key: String in world.modified_blocks.keys():
 		var x = str_to_var(key.split(",")[0])

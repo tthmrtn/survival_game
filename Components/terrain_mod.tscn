@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://brf4rprta6wcy"]
+
+[ext_resource type="Script" uid="uid://bbmqywhfsxsmu" path="res://Scripts/terrain_mod.gd" id="1_u6fo3"]
+
+[node name="Terrain_Mod" type="Node2D" node_paths=PackedStringArray("background_layer", "main_layer", "foreground_layer")]
+script = ExtResource("1_u6fo3")
+background_layer = NodePath("")
+main_layer = NodePath("")
+foreground_layer = NodePath("")
