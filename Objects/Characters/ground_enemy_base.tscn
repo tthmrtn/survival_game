@@ -1,25 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://djaf86d0mkqql"]
+[gd_scene load_steps=9 format=3 uid="uid://djaf86d0mkqql"]
 
 [ext_resource type="Script" uid="uid://deoouphynumvl" path="res://Scripts/Characters/ground_enemy_base.gd" id="1_kkhcf"]
 [ext_resource type="PackedScene" uid="uid://btew5s1ddreev" path="res://Components/velocity_component.tscn" id="2_pwg7a"]
+[ext_resource type="Texture2D" uid="uid://cny4c2usxfpcp" path="res://Visuals/Characters/Enemies/Ground_Enemy_Base/Arm1.png" id="3_nuraj"]
+[ext_resource type="Texture2D" uid="uid://r10qpjsgg8qn" path="res://Visuals/Characters/Enemies/Ground_Enemy_Base/Arm2.png" id="4_eadgn"]
+[ext_resource type="Texture2D" uid="uid://gahu18i08bnw" path="res://Visuals/Characters/Enemies/Ground_Enemy_Base/Body.png" id="5_667yo"]
+[ext_resource type="Texture2D" uid="uid://bxd5oseiday7i" path="res://Visuals/Characters/Enemies/Ground_Enemy_Base/Head.png" id="6_n16do"]
+[ext_resource type="Texture2D" uid="uid://dj1454nrhblxa" path="res://Visuals/Characters/Enemies/Ground_Enemy_Base/Leg1.png" id="7_brkdy"]
+[ext_resource type="Texture2D" uid="uid://cvej6lfvauxv2" path="res://Visuals/Characters/Enemies/Ground_Enemy_Base/Leg2.png" id="8_a43bg"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l4txp"]
-bg_color = Color(1, 0.245676, 0.100837, 1)
-
-[node name="GroundEnemy" type="CharacterBody2D" node_paths=PackedStringArray("velocity_component")]
+[node name="GroundEnemy" type="CharacterBody2D"]
 collision_mask = 2
 floor_constant_speed = true
 floor_max_angle = 1.55334
 script = ExtResource("1_kkhcf")
-velocity_component = NodePath("Velocity_Component")
-
-[node name="Panel" type="Panel" parent="."]
-offset_left = -7.0
-offset_top = -37.0
-offset_right = 7.0
-offset_bottom = 5.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_l4txp")
-metadata/_edit_use_anchors_ = true
 
 [node name="Velocity_Component" parent="." node_paths=PackedStringArray("body") instance=ExtResource("2_pwg7a")]
 body = NodePath("..")
@@ -30,5 +24,32 @@ SPEED_STAGES = {
 affected_by_gravity = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(0, -16)
+position = Vector2(2.38419e-07, -15.5)
+scale = Vector2(0.803571, 0.729167)
 polygon = PackedVector2Array(0, 21, 5, 21, 7, 12, 7, -21, -7, -21, -7, 12, -5, 21)
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Arm2" type="Sprite2D" parent="Node2D"]
+position = Vector2(2.5, -14.5)
+texture = ExtResource("4_eadgn")
+
+[node name="Body" type="Sprite2D" parent="Node2D"]
+position = Vector2(2.5, -14.5)
+texture = ExtResource("5_667yo")
+
+[node name="Arm1" type="Sprite2D" parent="Node2D"]
+position = Vector2(2.5, -14.5)
+texture = ExtResource("3_nuraj")
+
+[node name="Head" type="Sprite2D" parent="Node2D"]
+position = Vector2(2.5, -14.5)
+texture = ExtResource("6_n16do")
+
+[node name="Leg1" type="Sprite2D" parent="Node2D"]
+position = Vector2(2.5, -14.5)
+texture = ExtResource("7_brkdy")
+
+[node name="Leg2" type="Sprite2D" parent="Node2D"]
+position = Vector2(2.5, -14.5)
+texture = ExtResource("8_a43bg")

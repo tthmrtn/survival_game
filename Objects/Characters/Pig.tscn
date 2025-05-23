@@ -455,6 +455,7 @@ anim_player = NodePath("../AnimationPlayer")
 parameters/idle_or_walk/blend_amount = false
 
 [node name="Hurtbox_Component" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("7_yv4bc")]
+visible = false
 health_component = NodePath("../Health_Component")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hurtbox_Component"]
@@ -467,6 +468,7 @@ max_health = 50.0
 health_bar = NodePath("../Health_Bar")
 
 [node name="Health_Bar" type="ProgressBar" parent="."]
+visible = false
 offset_left = -16.0
 offset_top = -41.0
 offset_right = 16.0

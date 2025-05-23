@@ -24,7 +24,15 @@ var resultAmount: String
 # Divider: ":"
 var ratio: String
 
-func _init(item1name: String, item1cost: int, item2name: String, item2cost, result: Item, resultAmount: String, ratio: String):
+func _init(
+	item1name: String,
+	item1cost: int,
+	item2name: String,
+	item2cost: int,
+	result: Item,
+	resultAmount: String,
+	ratio: String
+	):
 	self.item1name = item1name
 	self.item1cost = item1cost
 	self.item2name = item2name

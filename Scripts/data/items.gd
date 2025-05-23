@@ -123,7 +123,6 @@ func get_item_by_including_string(str: String):
 	for item in as_array:
 		if item.name.contains(str):
 			res.push_back(item.copy())
-	
 	return res
 
 func get_item_by_name(name: String):

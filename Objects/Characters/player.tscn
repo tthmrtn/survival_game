@@ -855,13 +855,13 @@ polygon = PackedVector2Array(0, 12, 5, 12, 7, 3, 7, -34, -7, -34, -7, 3, -5, 12)
 unique_name_in_owner = true
 
 [node name="Lower_Left_Arm" parent="Visual_Container/Visuals" index="0"]
-position = Vector2(3.93958, -8.20798)
-rotation = 1.38301
+position = Vector2(4.24877, -8.17228)
+rotation = 1.40973
 scale = Vector2(0.999858, 0.999858)
 
 [node name="Upper_Left_Arm" parent="Visual_Container/Visuals" index="1"]
-position = Vector2(3.54325, -16.1974)
-rotation = 1.52123
+position = Vector2(3.6391, -16.1482)
+rotation = 1.49451
 scale = Vector2(0.9999, 0.9999)
 
 [node name="Upper_Left_Arm_Shirt" type="Sprite2D" parent="Visual_Container/Visuals/Upper_Left_Arm" index="0"]
@@ -895,7 +895,7 @@ position = Vector2(2, 2)
 
 [node name="Mid_Body" parent="Visual_Container/Visuals" index="5"]
 position = Vector2(-0.0872621, -8.99924)
-rotation = -0.0520093
+rotation = -0.0386476
 scale = Vector2(0.99995, 0.99995)
 
 [node name="Mid_Body_Shirt" type="Sprite2D" parent="Visual_Container/Visuals/Mid_Body" index="0"]
@@ -946,8 +946,8 @@ position = Vector2(-5.03571, 13.6014)
 scale = Vector2(0.999995, 0.999995)
 
 [node name="Upper_Body" parent="Visual_Container/Visuals" index="10"]
-position = Vector2(-0.347178, -13.9922)
-rotation = -0.0520093
+position = Vector2(-0.280442, -13.9953)
+rotation = -0.0386476
 scale = Vector2(0.99995, 0.99995)
 
 [node name="Upper_Body_Shirt" type="Sprite2D" parent="Visual_Container/Visuals/Upper_Body" index="0"]
@@ -962,8 +962,8 @@ position = Vector2(4, 12)
 scale = Vector2(1.00002, 1.00002)
 
 [node name="Head" parent="Visual_Container/Visuals" index="11"]
-position = Vector2(-1.65768, -19.9318)
-rotation = 0.0171027
+position = Vector2(-1.51146, -19.9518)
+rotation = 0.00374103
 scale = Vector2(0.999899, 0.999899)
 
 [node name="Pupil" type="Sprite2D" parent="Visual_Container/Visuals/Head" index="0"]
@@ -985,13 +985,13 @@ position = Vector2(5, 18)
 scale = Vector2(1.00004, 1.00004)
 
 [node name="Lower_Right_Arm" parent="Visual_Container/Visuals" index="12"]
-position = Vector2(-7.17468, -9.27085)
-rotation = -1.54567
+position = Vector2(-6.82056, -9.22433)
+rotation = -1.58576
 scale = Vector2(0.99992, 0.99992)
 
 [node name="Upper_Right_Arm" parent="Visual_Container/Visuals" index="13"]
-position = Vector2(-4.44554, -15.7815)
-rotation = -1.21929
+position = Vector2(-4.35453, -15.8391)
+rotation = -1.25938
 scale = Vector2(0.999921, 0.999921)
 
 [node name="Upper_Right_Arm_Shirt" type="Sprite2D" parent="Visual_Container/Visuals/Upper_Right_Arm" index="0"]
@@ -1109,6 +1109,18 @@ SPEED_STAGES = {
 transition_speed = 1.0
 affected_by_gravity = true
 
+[node name="AttackBoxHolder" type="Node2D" parent="."]
+position = Vector2(-0.0872621, -14.9992)
+rotation = -0.0386476
+scale = Vector2(0.99995, 0.99995)
+
+[node name="Attackbox_Component" parent="AttackBoxHolder" node_paths=PackedStringArray("selfHurtbox") instance=ExtResource("19_wejdo")]
+selfHurtbox = NodePath("../../Hurtbox_Component")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackBoxHolder/Attackbox_Component"]
+position = Vector2(10, -6)
+shape = SubResource("RectangleShape2D_poptw")
+
 [node name="character_visuals" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("17_r70v0")
@@ -1119,18 +1131,6 @@ script = ExtResource("17_r70v0")
 unique_name_in_owner = true
 visible = false
 offset_bottom = -148.0
-
-[node name="AttackBoxHolder" type="Node2D" parent="."]
-position = Vector2(-0.0872621, -14.9992)
-rotation = -0.0520093
-scale = Vector2(0.99995, 0.99995)
-
-[node name="Attackbox_Component" parent="AttackBoxHolder" node_paths=PackedStringArray("selfHurtbox") instance=ExtResource("19_wejdo")]
-selfHurtbox = NodePath("../../Hurtbox_Component")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackBoxHolder/Attackbox_Component"]
-position = Vector2(10, -6)
-shape = SubResource("RectangleShape2D_poptw")
 
 [connection signal="area_shape_entered" from="AttackBoxHolder/Attackbox_Component" to="AttackBoxHolder/Attackbox_Component" method="_on_area_shape_entered"]
 [connection signal="area_shape_exited" from="AttackBoxHolder/Attackbox_Component" to="AttackBoxHolder/Attackbox_Component" method="_on_area_shape_exited"]
